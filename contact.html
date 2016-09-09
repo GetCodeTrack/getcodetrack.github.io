@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Codetrack - Contact</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/mine.js"></script>
+</head>
+
+<body>
+	
+	<div style="margin:5% 20%;">
+		
+		
+		<!-- Form -->
+		<form id="contact-form" action="http://codetracksitetest.azurewebsites.net/api/contact" enctype="application/x-www-form-urlencoded" method="post">
+			<h3>CODETRACK - Contact</h3>
+			<p>Please fill out the form below. I will try to get back to you asap.</p>
+			<div>
+				<label>
+					<span>Name:</span>
+					<input name="Name" placeholder="Your name" type="text" tabindex="1" autofocus>
+				</label>
+			</div>
+			<div>
+				<label>
+					<span>Email: (required)</span>
+					<input name="Email" placeholder="Your email address (this will only be used for answering)" type="email" tabindex="2" required>
+				</label>
+			</div>
+			<div>
+				<label>
+					<span>Company:</span>
+					<input name="Company" placeholder="Company" type="text" tabindex="3">
+				</label>
+			</div>
+			<div>
+				<label>
+					<span>Message: (required)</span>
+					<textarea name="Message" placeholder="Your message" tabindex="5" required></textarea>
+				</label>
+			</div>
+			
+			<div class="inner">
+				
+				<button name="submit" type="submit" style="margin:auto;display:block" href="index.html" class="button big special">SEND</button>
+				
+			</div>
+			
+		</form>
+		<!-- /Form -->
+		
+		</div>
+	
+
+
+	
+</body>
+</html>

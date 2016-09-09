@@ -1,0 +1,33 @@
+CodeTrack : Performance profiler for .NET
+
+Features:
+=========
++Supports x86 and x64 architectures
++Supports WPF, Windows Forms, Webservices (IIS), Windows Services
+Supports profiling of child processes
++Attach to running process
++Portable: no installation equired
+Statistics while profiling
++Offline processing
++Choose your level of detail
++Detailed call information (including generic arguments)
++Code view
++Performance tree (per thread/process and combined)
++Unique timeline view (and heli view)
++Find & Mark features
++Log exceptions
+
+Free !
+
+More to come !
+
+
+Different modes: 
+================
+Sampling 
+
+Tracing (different levels of detail)
+Trace filtering : trace only what you want to see
+Trace method arguments and object usage
+
+
