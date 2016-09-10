@@ -6,6 +6,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="css/style.css" rel="stylesheet">
 	<script src="js/mine.js"></script>
+	<script type="text/javascript">
+		function submitform()
+		{
+		  document.contactform.submit();
+		  window.open("sent.html","_self");
+		}
+	</script>
 </head>
 
 <body>
@@ -14,7 +21,7 @@
 		
 		
 		<!-- Form -->
-		<form id="contact-form" action="http://codetracksitetest.azurewebsites.net/api/contact" enctype="application/x-www-form-urlencoded" method="post">
+		<form name="contactform" action="http://codetracksitetest.azurewebsites.net/api/contact" enctype="application/x-www-form-urlencoded" method="post">
 			<h3>CODETRACK - Contact</h3>
 			<p>Please fill out the form below. I will try to get back to you asap.</p>
 			<div>
@@ -42,12 +49,17 @@
 				</label>
 			</div>
 			
+			
 			<div class="inner">
 				
-				<button name="submit" type="submit" style="margin:auto;display:block" href="index.html" class="button big special">SEND</button>
-				
-			</div>
 			
+				
+			
+						<!--<li><a href="index.html" class="button big special">Back</a></li>-->
+						<a style="margin:auto;width:100px;display:block" href="javascript: submitform()" class="button big alt">Send</a>
+				
+		
+
 		</form>
 		<!-- /Form -->
 		
