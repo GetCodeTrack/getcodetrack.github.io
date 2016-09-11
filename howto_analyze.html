@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
+       <h2>Analyzing</h2>
+
+        <ul>
+
+            <h2>Sections</h2>
+                In the profiling view there are 3 main sections:
+                <ul>
+                    <li><h1>Per Thread</h1>
+                        <p>This view shows you a performance tree, split up per thread (and process if child processes were traced). The tree items are ordered by duration.<br/>
+                        If you click on an item it will automatically expand all items below recursively for as long as they don't have any sibling nodes.This allows you to locate a bottle neck very fast.
+                        <br/><image src="./images/howto/analyze_tree.png"/>
+                        </p>
+                    </li>
+                    <li><h1>All</h1>
+                        <p>Similar to the 'Per Thread' view, this gives you a performance tree. The difference is that all trees from one process have been combined into 1 overall tree.
+                        <br/><image src="./images/howto/analyze_tree_all.png"/>
+                        </p>
+                    </li>
+                    <li><h1>Timeline</h1>
+                        <p>
+                        The timeline view is only available if you selected this mode while configuring your profiling session (see <a href="profilingmodes.html">Profiling modes</a>).
+                        <br/>From left to right is the time axis, and from top to bottom you go deeper in the call stack. Threads are stacked upon each other vertically.<br/>
+                        If you move your mouse over an item you will see an info tooltip. If you click on an item it will be selected and you will get the properties for that specific call in the properties tab.
+                        If you had enabled parameters, you will find them in the properties window. If object tracking was on, every object will have it's unique id between square brackets (as well in the instance, as in all arguments).
+                        <br/><image src="./images/howto/analyze_properties.png"/><br/>
+                        On the right you'll find the assembly tree to browse and find all method calls by assembly,namespace and type.<br/>Bellow the assembly tree, there is the heli(copter) view.
+                        You can use this to select the viewport for the timeline and/or move it around. If a particular method is selected, all calls of this method will be highlighted in the heliview.
+                        You can simply click once on an instance to select it. If you doubleclick that instance will be selected AND the view will be zoomed in on that item.
+                        </br>
+                        Navigating in the timeline can also be done by using the buttons in the toolbar (Zoom to fit, Zoom, Drag). You can also use ctrl+scroll to zoom in and out on particular piece in the view.
+                        <br/>
+                        If you hold the left mouse button while dragging the mouse you get a measurement tool overlay to find out how long any piece of the timeline takes.
+                        <br/><image src="./images/howto/analyze_measure.png"/><br/>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <h2>Tools</h2>
+                
+                <ul>
+                    <li><h1>Selecting</h1>
+                    <p>Selecting calls will be effective over all sections. So eg. if you make a selection in the timeline, the call will also be selected and highlighted in the tree views and vice versa.
+                    <br/>You can use the navigator in the topright corner of the treeviews to navigate to previous and next instances if available.</p>
+                    </li>
+                    <li><h1>Finding</h1>
+                    <p>Use Ctrl+F or press the magnify icon in the toolbar to search anything by name. This will allow you to find assemblies, namespaces, types and methods.<br/>Note that codetrack
+                    takes in account the generics of a class and/or method. Eg. the Add method of List<T> can be shown multiple times, with different generics.
+                    </p>
+                    <br/><image src="./images/howto/analyze_find.png"/><br/>
+                    </li>
+                    <li><h1>Markers</h1>
+                    <p>You can right click on a method in the assembly tree to mark or unmark all instance of a certain method.</br>These markers will also be visible in the timeline.</p>
+                    <br/><image src="./images/howto/analyze_mark.png"/><br/>
+                    </li>
+                    <li><h1>Exceptions</h1>
+                    <p>Exceptions will be marked red (as well in the timeline view as in the assembly tree). If an exception is caught, all methods where this exceptions passes in the stack will also be marked red.<br/>
+                    Move your mouse over the stack tree, you'll find more info about the exception in the deepest red item.</p>
+                    </li>
+                    <li><h1>Properties</h1>
+                    <p>In the properties tab, you'll find everything there is to know about a certain method call.</p>
+                    </li>
+                    <li><h1>Code</h1>
+                    <p>In the code window you can see the decompiled code of the currently selected method. Note that this will only work if the assembly can be found on the location were it's traced. In other words: this feature might not work if you open the trace files on a different machine.</p>
+                     <br/><image src="./images/howto/analyze_code.png"/><br/>
+                    </li>
+
+                </ul>
+            </p>
+        </ul>
+    </div>
+</body>
+
+

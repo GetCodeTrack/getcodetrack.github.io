@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
+       <h2>Profiling modes</h2>
+
+<p>
+Codetrack provides a wide range of options for profiling:
+<ul>
+
+    <li>
+        <h1>Sampling</h1>
+        <p>
+        In this mode, the threads of your process are being suspended periodically and a snapshot of the call stack for every thread is taken.
+        Use this mode to get a general idea about the performance of your code.
+        <br/>
+        Since snapshots are made periodically, this method does NOT capture every method call.
+        </br>
+        This is the profiling mode that has the least impact on the performance of your process. The captured amount of data is relatively small and
+        is processed very quickly.
+        <image src="./images/profilingmodes_sampling.png"/>
+        </br>
+        </p>
+ </li>
+  <li>
+        <h1>Tracing</h1>
+        <p>
+        Tracing means that EVERY call will be captured and all measurements will be 100% accurate. The more options you enable, the more information you will get, but the bigger your
+        captured data will be and the slower your application will run. It will result in the same performance tree as the sampling mode, but here the timings will be exact and every call will be included.
+        </br>
+        <ul>
+            <li>
+            <h1>Timeline</h1>
+            <p>Enable this option if you want to have the timeline in your analyze window. This will give you an incredibly detailed view on ALL of your method calls. Including their position
+            in the call stack and their start and end time.</br>
+            <image src="./images/profilingmodes_timeline.png"/>
+            </p>
+            <p>
+            If timeline is enabled, you can also choose to trace all method arguments. If you enable track objects, every object will have it's own unique id and can be identified.
+            </p>
+
+            </li>
+            <li>
+            <h1>Scope</h1>
+            <p>
+            Scope enables you to select the code you want to be profiled. This can be done based on Assembly, file path, method name or type name.
+            </br>You can add multiple rules to define the profiling scope. Use the exclamation mark to add an exclusion rule.
+            </p>
+            </li>
+        </ul>
+        </p>
+    </li>
+
+
+</ul>
+</p>
+    </div>
+</body>
+
+

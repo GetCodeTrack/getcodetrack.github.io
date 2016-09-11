@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
+       <h2>Profiling an executable</h2>
+
+<p>
+This can be used to profile any process that can be started by the profiler. This can be any .NET application (including console apps, windows forms, WPF, …). 
+</p>
+
+<p>
+Bear in mind that if your process needs to be elevated you need to run the profiler elevated as well (you can do this by clicking on the elevation icon icon the title bar, or run the profiler as admin).
+</p>
+
+<ol>
+<li>Select the collect tab (on the left of the application)
+</li>
+<li>Select ‘Process’ and click the arrow on the right to go to the next step.<br/>
+<image src="./images/howto/profileprocess01.png">
+</br>
+</li>
+
+<li>Now you can select the executable you want to profile. If your process needs startup arguments, you can specify them here.</br>
+The bittness and DotNet version should be selected automatically. Should this be incorrect, you can still change this manually.</br>
+Now click the arrow on the right to go to the next step.<br/>
+<image src="./images/howto/profileprocess02.png">
+</br>
+</li>
+
+<li>
+Now it's time to decide upon your level of detail. Important to remember, is that the more detail you require, the higher the impact profiling will have on your performance.
+If you just started investigating a problem, it might be a good idea to use the sampling option. Since this will be the most performant profiling mode.
+From this information you can then start another session with much more detail, profiling only the code that causes the performance issue.
+</br>For more information about the different profiling settings, read <a href="profilingmodes.html">Profiling Modes</a>.
+<br/>
+<image src="./images/howto/profileprocess03.png">
+</br>Now we are ready for the last step, click on the right arrow to continue.
+</br>
+</li>
+
+<li>
+In this last section you need to select the destination of the profiling data. (Make sure you select a location with enough
+space if you profile with lots of detail).<br/>
+If you want to als profile a child process (started by our own process), enable this before starting to profile.
+</br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable the processing of the data.
+This allows you to do the number crunching offline on another machine.
+</br>
+<image src="./images/howto/profileprocess04.png">
+<br/>
+If you want to start profiling immediately, make sure you click the record button, otherwise click the pause button and hit record from the moment
+you want to start capturing data.<br/>
+Now you are ready to start profiling. If you click the play button, your process wil start. 
+<br/>
+If you press the stop button Codetrack will try to gracefully end your process and profiling will stop as soon as the process is stopped.
+You can also just end the process from your own application.
+</br>
+</li>
+
+</ol>
+    
+    </div>
+</body>
+
+
