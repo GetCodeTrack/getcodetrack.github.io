@@ -1,6 +1,14 @@
 
+function send(sender)
+{
+	var data = $(sender).serializeArray();
+	debugger;
+	var dataStr = JSON.stringify(data);
+	alert(dataStr);
+}
 
-	function submitform() 
+
+	function submitform(form) 
 {
     var name = document.getElementById('Name').value;
     var company = document.getElementById('Company').value;
