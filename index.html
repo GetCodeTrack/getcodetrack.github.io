@@ -43,9 +43,9 @@
 					<pCenter style="font-size:2em">A free .NET performance profiler and execution analyzer</pCenter>
 					<ul class="actions">
 						<li><a href="releases.html" target="_blank" class="button big special">Download</a></li>
-						<li><a href="howto_index.html" onclick="trackOutboundLink('howto_index.html'); return false;" class="button big alt">How To</a></li>
-						<li><a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;" class="button big alt">Blog</a></li>
-						<li><a href="https://pledgie.com/campaigns/32543" onclick="trackOutboundLink('https://pledgie.com/campaigns/32543'); return false;" style="margin:0 0 0 50px" class="button big alt">Donate</a></li>
+						<li><a href="howto_index.html" onclick="trackOutboundLink('howto_index.html',false); return false;" class="button big alt">How To</a></li>
+						<li><a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/',false); return false;" class="button big alt">Blog</a></li>
+						<li><a href="https://pledgie.com/campaigns/32543" onclick="trackOutboundLink('https://pledgie.com/campaigns/32543',false); return false;" style="margin:0 0 0 50px" class="button big alt">Donate</a></li>
 					</ul>
                     <pCenter>
                         By downloading this product you agree to the <a href="license.html" target="_blank">EULA</a>
@@ -61,7 +61,7 @@
 					<pCenter>CodeTrack is a versatile profiler with some extra tricks up its sleeve.<br/>On top of the profiling features it also allows debugging and analyzing code execution.
 					</pCenter>
 					<br/><br/>
-					<a href="https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/'); return false;" class="button big special">How can I help you ?</a>
+					<a href="https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/" target="_blank" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/',true); return false;" class="button big special">How can I help you ?</a>
 					<br/><br/>
 				</header>
 				<div class="container">
@@ -205,7 +205,7 @@
 								<br/>My sons love playing with lego city and lego technics, if you like to make them happy instead: contact me :-)</p>
 								<ul class="actions">
 
-									<li><a href="https://pledgie.com/campaigns/32543" onclick="trackOutboundLink('https://pledgie.com/campaigns/32543'); return false;" target="_blank" class="button alt">Donate</a></li>
+									<li><a href="https://pledgie.com/campaigns/32543" target="_blank" onclick="trackOutboundLink('https://pledgie.com/campaigns/32543',true); return false;" target="_blank" class="button alt">Donate</a></li>
 									<li><a href="contact.html" target="_blank" class="button alt" >Contact me</a></li>
 									
 								</ul>
@@ -263,9 +263,9 @@
 							<h2>Follow Codetrack</h2>
 							<p>Follow codetrack and stay up to date about new features and reases.</p>
 							<ul class="icons">
-								<li><a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;" class="icon fa-rss"><span class="label">Twitter</span></a></li>
-								<li><a href="https://twitter.com/codetrack4net" onclick="trackOutboundLink('https://twitter.com/codetrack4net'); return false;" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.facebook.com/codetrackdotnet" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet'); return false;" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://getcodetrack.wordpress.com/" target="_blank" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/',true); return false;" class="icon fa-rss"><span class="label">Twitter</span></a></li>
+								<li><a href="https://twitter.com/codetrack4net" target="_blank" onclick="trackOutboundLink('https://twitter.com/codetrack4net',true); return false;" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/codetrackdotnet" target="_blank" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet',true); return false;" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 								<!--<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
@@ -303,11 +303,22 @@
 * als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
 * bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
 */
-var trackOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
+var trackOutboundLink = function(url, external) {
+   if (external)
+   {
+	ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){ window.open(url, '_blank'); }
+      });
+   }
+   else
+   {
+   	ga('send', 'event', 'outbound', 'click', url, {
      'transport': 'beacon',
      'hitCallback': function(){document.location = url;}
-   });
+      });
+   }
+   
 } 
 </script>
 	</body>
