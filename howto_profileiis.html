@@ -24,9 +24,16 @@
 This can be used to profile any .NET code that is hosted within IIS.
 </p>
 
-<p>
-Imortant: for profiling IIS, it will most likely be necessary to run the profiler in elevated mode (you can do this by clicking on the elevation icon icon the title bar, or run the profiler as admin).
+<p style="color:red">
+<i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
+Make sure the codetrack files are not placed in a special folder (like 'My Documents', your desktop , a network share,...).<br/>IIS doesn't like loading the profiling dll from such a location. I suggest just using something like 'c:\temp'
 </p>
+
+<p style="color:red">
+<i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
+For profiling IIS, it will most likely be necessary to run the profiler in elevated mode (you can do this by clicking on the elevation icon icon the title bar, or run the profiler as admin).
+</p>
+
 
 <ol>
 <li>Select the collect tab (on the left of the application)
