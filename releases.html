@@ -6,6 +6,7 @@
 -->
 <html>
 	<head>
+
 		<title>CodeTrack - Releases</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -23,11 +24,11 @@
 	<body id="top">
 			<section id="banner" class="wrapper style2">
 				<div class="inner">
-					<h2>CodeTrack: Releases</h2>
+						
+					<h2><image src="images/logo_rocket.png" height="170px" style="text-align:center;vertical-align:middle;margin:30px"/>CodeTrack: Releases</h2>
 	
 					<pCenter>
 						Creating CodeTrack is a challenging task and uses up quite a lot of my spare (and family) time. If you like to support me, you can do so by making a donation. 
-						<br/>My sons love playing with lego city and lego technics, if you like to make them happy instead: contact me :-)
 						<br/>
 					</pCenter>
 
@@ -47,7 +48,7 @@
 				
 					<pCenter>Although I do my very best, sometimes I break stuff. That's why you can also get previous versions in case of an issue.
 					<br/>
-					If you like CodeTrack, spread the word (a tweet goes along way). If you have a problem, please let me know so I can fix it. 
+					If you like CodeTrack, spread the word (a tweet, like or share goes a long way). If you have a problem, please let me know so I can fix it. 
 					<br/>
 					</pCenter>
 					<br/>
@@ -64,6 +65,50 @@
 
 				</header>
 
+				
+				<div class="container">
+					<div class="row" >
+						<div class="12u" >
+							<section class="special box" >
+								<h2>V1.0.0.7</h2>
+								<h1>(23-02-2017)</h1>
+								<ul>
+									
+									<li>[New] Filtering on process name and path (in tracing mode)</li>
+									<li>[New] IISExpress: IISEXpressTray.exe is filtered out by default</li>
+									<li>[New] IISExpress: search for applicationhost.config for iisexpress based on VS solution</li>
+									<li>[New] <b>List view</b></li>
+									<li>[New] Check for new version on startup</li>
+									<li>[New] Logging in case of issues (create c:\codetracklog folder to enable)</li>
+									<li>[New] Human-readable timestamps</li>
+									<li>[New] <b>Advanced tracing options</b>
+										<ul>
+											<li>Hi precision</li>
+											<li>Thread cycles</li>
+											<li>Overhead compensation</li>
+											<li>Generic resolving</li>
+										</ul>
+									</li>
+									
+									<li>[Improvement] <b>Complete rewrite of tracing code</b>, hugely reduced tracing overhead</li>
+									<li>[Improvement] Reduced memory usage and improved performance</li>
+									<li>[Improvement] UI: sharper icons, logo, cleanup, infobuttons</li>
+									<li>[Improvement] Made selecting treeitems less jumpy</li>
+									<li>[Improvement] Decompile code async</li>
+									<br/>
+									<li>[Fix] some NGENed assemblies are not resolved properly</li>
+									<li>[Fix] Restart already running IISExpress site</li>
+									<li>[Fix] Crash when selecting IISExpress item</li>
+									<li>[Fix] Crash when tracing multithreaded applications (especially when enabling parameters)</li>
+									<li>[Fix] Selecting running 32bit process on 64bit machine</li>
+								</ul>
+
+								<a href="releases/codetrack_1_0_0_7.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_7.zip'); return false;">Download</a>
+							</section>
+						</div>
+					</div>
+				</div>
+				
 				<div class="container">
 					<div class="row" >
 						<div class="12u" >

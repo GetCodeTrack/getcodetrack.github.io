@@ -884,7 +884,7 @@
 /* Header */
 
 	#skel-layers-wrapper {
-		padding-top: 3em;
+		padding-top: 0;
 	}
 
 	#header {
@@ -989,7 +989,7 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		color: #d8d8d8;
-		padding: 14em 0;
+		padding: 0 14em;
 		text-align: center;
 		position: relative;
 	}
@@ -1105,4 +1105,20 @@
 		
 	}
 
-
+.my-gallery {
+  width: 100%;
+  float: left;
+}
+.my-gallery img {
+  width: 100%;
+  height: auto;
+}
+.my-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  
+}
+.my-gallery figcaption {
+  display: none;
+}

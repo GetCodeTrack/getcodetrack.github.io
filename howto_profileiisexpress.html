@@ -41,7 +41,7 @@ Now you can select the website you want to trace.
     </br>If your site is not listed there are 2 possible reasons:
     <ol>
         <li>The iis express config file is not correct.</br>If it's not the machine config (usually in C:\Program Files\IIS Express\config), it might be located 
-        in the.vs\config\ folder in your project folder</li>
+        in the.vs\config\ folder in your project folder.</br>You can also select your Visual Studio solution file, codetrack will then try to find the right config.</li>
         <li>Currently your site is not running (or it is and you need to press the refresh button in the lower left corner)</li>
     </ol>
     <br/>
@@ -59,6 +59,8 @@ Now click the arrow on the right to go to the next step.<br/>
 Now it's time to decide upon your level of detail. Important to remember, is that the more detail you require, the higher the impact profiling will have on your performance.
 If you just started investigating a problem, it might be a good idea to use the sampling option. Since this will be the most performant profiling mode.
 From this information you can then start another session with much more detail, profiling only the code that causes the performance issue.
+
+By default Codetrack will not trace code executed in IISExpressTray.exe. (It will still apear in the tracing stats, but it will be excluded from the resulting data)
 </br>For more information about the different profiling settings, read <a href="profilingmodes.html">Profiling Modes</a>.
 <br/>
 <image src="./images/howto/profileexpress05.png">
@@ -81,9 +83,6 @@ Now you are ready to start profiling. If you click the play button, IIS express 
 If you press the stop button Codetrack will stop IIS express (again: this might take a while).
 </br>
 <br>
-As You can see in the above screenshot, 2 processes are being traced : iisexpress.exe (as expected), but also iis express tray.
-If you don't want iisexpress tray data in your output, you can use the filter in the profiling options. (This is only available in tracing mode).
-Don't worry, codetrack will nicely split the data of these 2 processes, so you can analyze only the process you're interested in :-)
 
 
 </ol>

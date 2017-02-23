@@ -12,15 +12,25 @@
 		<meta name="keywords" content="Codetrack Profiling Profiler Profile tracing tracking code track dotnet .NET performance c# vb f# IIS express asp wpf winforms" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		
+		
+		<link rel="stylesheet" href="css/photoswipe.css">
+		<link rel="stylesheet" href="css/default-skin/default-skin.css">
+		
+	
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
-
-		
 	</head>
 	<body id="top">
+
+
+
+
+
+
+
 
 		<!-- Header -->
 			<!-- <header id="header" class="skel-layers-fixed">
@@ -39,8 +49,11 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>CodeTrack</h2>
-					<pCenter style="font-size:2em">A free .NET performance profiler and execution analyzer</pCenter>
+				<h2>
+					<image src="images/logo2.png" width="70%"/>
+					</h2>
+					<!--<h2>CodeTrack</h2>-->
+					<pCenter style="font-size:1.5em">A free .NET performance profiler and execution analyzer</pCenter>
 					<ul class="actions">
 						<li><a href="releases.html" target="_blank" class="button big special">Download</a></li>
 						<li><a href="howto_index.html" onclick="trackOutboundLink('howto_index.html',false); return false;" class="button big alt">How To</a></li>
@@ -91,6 +104,7 @@
 									<li>Detailed call information including generic arguments</li>
 									<li>Performance tree (per thread/process and combined)</li>
 									<li>Unique timeline view</li>
+									<li>List view</li>
 									<li>Heli view</li>
 									<li>Code view</li>
 									<li>Search & Mark features</li>
@@ -145,28 +159,98 @@
 				<header class="major">
 					<h2>Screenshots</h2>
 				</header>
-				<div class="container">
-					<div class="row">
-						<div class="6u">
-							<section class="special">
-								<h3>Per thread view</h3>
-								<img class="image fit" src="images/perthreadview.png" alt="" />
-							</section>
-						</div>
-						<div class="6u">
-							<section class="special">
-								<h3>Timeline view</h3>
-								<img class="image fit" src="images/timelineview.png" alt="" />
-							</section>
-						</div>
-						<div class="6u">
-							<section class="special">
-								<h3>Statistics while tracing</h3>
-								<img class="image fit" src="images/profilegraph.png" alt="" />
-							</section>
-						</div>
-					</div>
+				
+				
+					<div class="container">
+						<div class="row">
+							<div class="picture my-gallery container row" itemscope itemtype="http://schema.org/ImageGallery">
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Code view</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_code.png" itemprop="contentUrl" data-size="1601x862" data-index="0">
+												<img src="images/howto/analyze_code.png"  itemprop="thumbnail" alt="Code view">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Search</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_find.png" itemprop="contentUrl" data-size="1601x862" data-index="1">
+												<img src="images/howto/analyze_find.png"  itemprop="thumbnail" alt="Search">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>List view</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_listview.png" itemprop="contentUrl" data-size="1601x862" data-index="2">
+												<img src="images/howto/analyze_listview.png"  itemprop="thumbnail" alt="List view">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Marking</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_mark.png" itemprop="contentUrl" data-size="1601x862" data-index="3">
+												<img src="images/howto/analyze_mark.png"  itemprop="thumbnail" alt="Marking">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Per thread</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_tree.png" itemprop="contentUrl" data-size="1601x862" data-index="4">
+												<img src="images/howto/analyze_tree.png"  itemprop="thumbnail" alt="Per thread">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Combined threads</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/analyze_properties.png" itemprop="contentUrl" data-size="1601x862" data-index="5">
+												<img src="images/howto/analyze_properties.png"  itemprop="thumbnail" alt="Combined threads">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								
+								<div class="4u galleryItem">
+									<section class="special">
+										<h3>Realtime trace info</h3>
+										<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/howto/coreclr04.png" itemprop="contentUrl" data-size="800x600" data-index="6">
+												<img src="images/howto/coreclr04.png"  itemprop="thumbnail" alt="Realtime trace info">
+											</a>
+										</figure>
+									</section>
+								</div>
+								
+								
+								</div>
+								
+						</div>	
 				</div>
+				
+				
+				
 			</section>
 
 		<!-- Three -->
@@ -175,7 +259,7 @@
 					<div class="row">
 						<div class="8u">
 							<section>
-								<h2>A word from the creator</h2>
+								<h2>About Codetrack</h2>
 								<a href="#" class="image fit"><img src="images/programming.jpg" alt="" /></a>
 								
 								<p>CodeTrack is a one-man project. It started as a small spike out of curiosity towards the inner working of the .NET framework.
@@ -184,17 +268,18 @@
 								</p>
 								<p>
 								If you have some issues or have a great idea for a neat feature, feel free to contact me.<br/>
-								This profiler is just a hobby project which means it is being developped only in my spare time. I also have a real daytime job, and I 
+								This profiler is just a hobby project which means it is being developed only in my spare time. I also have a real daytime job, and I 
 								love to spend some time with my wife and kids. Please keep that in mind when I don't immediately get back to you.
 								</p>
 								<p>
 								CodeTrack is free to use, as well for personal as commercial use. If you like CodeTrack: let me know, that will definately encourage me to go on with this project :-)
+								Also, make sure to spread the word and share with your fellow developers: a tweet, like or share is greatly appreciated !
 								</p>
 								<p>
-								I hope that CodeTrack can help you in your daily life as a .NET programmer as much as it does me !
+								I hope that CodeTrack can help you in your daily life as a .NET developer as much as it does me !
 								<br/>
 								<br/>
-								Kind regards,<br/>Nico Van Goethem
+								Gr,<br/>Nico Van Goethem
 								<p>
 							</section>
 						</div>
@@ -202,7 +287,6 @@
 							<section>
 								<h3>Donate</h3>
 								<p>Creating CodeTrack is a challenging task and uses up quite a lot of my spare (and family) time. If you like to support me, you can do so by making a donation. 
-								<br/>My sons love playing with lego city and lego technics, if you like to make them happy instead: contact me :-)</p>
 								<ul class="actions">
 
 									<li><a href="https://pledgie.com/campaigns/32543" onclick="trackOutboundLink('https://pledgie.com/campaigns/32543',false); return false;" target="_blank" class="button alt">Donate</a></li>
@@ -271,21 +355,72 @@
 								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
 							</ul>
 						</div>
+						
+					</ul>
 					</div> 
+					
 					<ul class="copyright">
 						<li>&copy; Nico Van Goethem. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<!-- <li>Images: <a href="http://unsplash.com">Unsplash</a></li> -->
+							<li><a href="privacy.html" target="_blank">Privacy policy</a></li>
 					</ul>
+					
+					
+					
+					
 				</div>
 			</footer>
 
+			<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
  
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+ 
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- Core JS file -->
+		<script src="js/photoswipe.min.js"></script> 
+		<!-- UI JS file -->
+		<script src="js/photoswipe-ui-default.min.js"></script> 
+		
  		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/mine.js"></script>
+		
 		<script> 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -321,5 +456,60 @@ var trackOutboundLink = function(url, external) {
    
 } 
 </script>
+<script>
+
+   (function($) {
+    var $pswp = $('.pswp')[0];
+    var image = [];
+
+    $('.picture').each( function() {
+        var $pic     = $(this),
+            getItems = function() {
+                var items = [];
+                $pic.find('a').each(function() {
+                    var $href   = $(this).attr('href'),
+                        $size   = $(this).data('size').split('x'),
+                        $width  = $size[0],
+                        $height = $size[1];
+
+                    var item = {
+                        src : $href,
+                        w   : $width,
+                        h   : $height
+                    }
+
+                    items.push(item);
+                });
+                return items;
+            }
+
+        var items = getItems();
+
+        $.each(items, function(index, value) {
+            image[index]     = new Image();
+            image[index].src = value['src'];
+        });
+
+        $pic.on('click', 'figure', function(event) {
+            event.preventDefault();
+            
+            var $index =  $(this).closest( '.galleryItem' ).index();
+            var options = {
+                index: $index,
+                bgOpacity: 0.7,
+                showHideOpacity: true
+            }
+
+            var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+            lightBox.init();
+        });
+    });
+})(jQuery);
+
+</script>
+
+
+
+
 	</body>
 </html>

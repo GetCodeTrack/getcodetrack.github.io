@@ -4,4 +4,5 @@ svc;http://codetrackfeedbackservice.azurewebsites.net
 1.0.0.4;www.getcodetrack.com/releases/codetrack_1_0_0_4.zip
 1.0.0.5;www.getcodetrack.com/releases/codetrack_1_0_0_5.zip
 1.0.0.6;www.getcodetrack.com/releases/codetrack_1_0_0_6.zip
+1.0.0.7;www.getcodetrack.com/releases/codetrack_1_0_0_7.zip
 
