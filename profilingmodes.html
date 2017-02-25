@@ -21,7 +21,11 @@
        <h2>Profiling modes</h2>
 
 <p>
-Codetrack provides a wide range of options for profiling:
+Codetrack provides a wide range of options for profiling.<br/>
+
+
+
+Also check out this post, where the difference is explained : <a href="https://wordpress.com/read/feeds/53780037/posts/1354177350" onclick="trackOutboundLink('https://wordpress.com/read/feeds/53780037/posts/1354177350',false); return false;" >The rocket tale (part I): Sampling vs Tracing</a>
 <ul>
 
     <li>
@@ -70,6 +74,43 @@ Codetrack provides a wide range of options for profiling:
 </ul>
 </p>
     </div>
+	
+	
+	    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83912260-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+/**
+* Functie die klikken op een uitgaande link in Analytics bijhoudt.
+* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
+* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
+* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
+*/
+var trackOutboundLink = function(url, external) {
+   if (external)
+   {
+	ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){ window.open(url, '_blank'); }
+      });
+   }
+   else
+   {
+   	ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+      });
+   }
+   
+} 
+</script>
 </body>
 
 
