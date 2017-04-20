@@ -20,7 +20,25 @@
     <div style="width: 60%; height: 80%; margin: auto;display: block">
        <h2>Analyzing</h2>
 
+<a name="top"></a>
+<p>Analyzing your profiled data can be a little overwhelming for the first time. In this documentation you can find all the necessary knowledge to understand what's going on:
+<li><a href="#sections">Sections</a></li>
+<li><a href="#toolbar">Toolbar</a></li>	
+<li><a href="#timelinegraph">Timeline Graph</a></li>
+<li><a href="#threadfiltering">Thread Filtering & Ordering</a></li>
+<li><a href="#timingmodes">Timing Modes</a></li>
+<li><a href="#selecting">Selecting</a></li>
+<li><a href="#searching">Searching</a></li>
+<li><a href="#colormarkers">Color Markers</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#suspensions">Suspensions</a></li>
+<li><a href="#garbagecollects">Garbage Collects</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#code">Code</a></li>
+</p>
+
         <ul>
+<a name="sections"></a>
 
             <h2>Sections</h2>
                 In the profiling view there are 4 main sections:
@@ -44,12 +62,14 @@
                     <li><h1>Timeline</h1>
                         <p>
                         The timeline view is only available if you selected this mode while configuring your profiling session (see <a href="profilingmodes.html">Profiling modes</a>).
-                        <br/>From left to right is the time axis, and from top to bottom you go deeper in the call stack. Threads are stacked upon each other vertically.<br/>
-                        If you move your mouse over an item you will see an info tooltip. If you click on an item it will be selected and you will get the properties for that specific call in the properties tab.
+						However, if you didn't enable the timeline, you will still get a virtual version (see <a href="virtualtimeline.html">Virtual timeline</a>). You can recognize this by the orange theme, and the warning in the top left corner.
+
+                        <br/>From left to right is the time axis, and from top to bottom you go deeper in the call stack. Threads are stacked upon each other vertically, the thread names are shown at the front of each thread.<br/>
+                        If you move your mouse over an item you will see an info tooltip. If you click on an item it will be selected and you will get the properties for that specific call in the properties tab (you can also select multiple items by using shift and/or control click).
                         If you had enabled parameters, you will find them in the properties window. If object tracking was on, every object will have it's unique id between square brackets (as well in the instance, as in all arguments).
                         <br/><image src="./images/howto/analyze_properties.png" width="120%"/><br/>
-                        On the right you'll find the assembly tree to browse and find all method calls by assembly,namespace and type.<br/>Bellow the assembly tree, there is the heli(copter) view.
-                        You can use this to select the viewport for the timeline and/or move it around. If a particular method is selected, all calls of this method will be highlighted in the heliview.
+                        On the right you'll find the assembly tree to browse and find all method calls by assembly,namespace and type.<br/>Bellow the assembly tree, is the heli(copter) view.
+                        You can use this to select the viewport for the timeline and/or move it around. If a particular method is selected, all calls of this method will be highlighted in the heliview (little blue dots).
                         You can simply click once on an instance to select it. If you doubleclick that instance will be selected AND the view will be zoomed in on that item.
                         </br>
                         Navigating in the timeline can also be done by using the buttons in the toolbar (Zoom to fit, Zoom, Drag). You can also use ctrl+scroll to zoom in and out on particular piece in the view.
@@ -58,44 +78,125 @@
                         <br/><image src="./images/howto/analyze_measure.png" width="120%"/><br/>
                         </p>
                     </li>
-                </ul>
-            </p>
+				</ul>
+<a name="toolbar"></a>		
+<a href="#top">Goto top</a>		
+				<h2>Toolbar</h2>
+					<p>
+						The toolbar at the top provides all necessary tools to navigate and analyze your profiling session:
+						<br/>
+						<image src="./images/howto/toolbar.png"/>
+
+					</p>
+<a name="timelinegraph"></a>
+<a href="#top">Goto top</a>
+					<h2>Timeline Graph</h2>
+                        <p>
+                        By clicking the "show/hide graph" button, you can display the extra metrics that are measured during your profiling session.
+                        These metrics contain: Heap sizes (GC), processor usage by your process (CPU), memory usage by your process (RAM), disk io by your process (IO).
+                        </br>Not that the heap sizes are collected from WMI, sometimes this doesn't work and these metrics are not available. The first measurement can only occur AFTER the first garbage collect.
+                        </br>By hovering over the graph you can get the values of the metrics.
+                        <br/><image src="./images/howto/timeline_graph_detail.png"<br/>
+						</p>
+					
+<a name="threadfiltering"></a>
+<a href="#top">Goto top</a>
+					<h2>Thread Filtering & Ordering</h2>
+					<p>
+					By clicking the "Filter & Order Threads" button in the toolbar, you get a dialog where you can reorder the treads by dragging them around.
+					You can choose which threads to include in the views (this affect all views: "timeline" , "per thread", "all threads", "list", "exceptions",...)
+					</p>
+
+					 <br/><image src="./images/howto/order_threads_detail.png"<br/>
+					 <p>
+					<h5>TIP</h5>
+					You can for instance use this to select all threads with the same name and then get a combined view for these threads in the "all threads" view.
+					</p>
+<a name="timingmodes"></a>
+<a href="#top">Goto top</a>
 			<h2>Timing modes</h2>
 			<p>
-			Depending on the settings you choose before collecting your profiling data (Under the 'advanced' expander in your tracing options), you can select the kind of timings you want to see in all the previous views (timeline is always in Walltime mode).
+			Depending on the settings you choose before collecting your profiling data (Under the 'advanced' expander in your tracing options), you can select the kind of timings you want to see in all the previous views by clicking the gear icon in the upper right corner (timeline is always in Walltime mode).
 			 <br/><image src="./images/howto/analyze_timingmodes.png" width="120%"/><br/>
 			 </p>
 			 <br/>
-            <h2>Tools</h2>
-                
-                <ul>
-                    <li><h1>Selecting</h1>
+<a name="selecting"></a>
+<a href="#top">Goto top</a>
+                  <h2>Selecting</h2>
                     <p>Selecting calls will be effective over all sections. So eg. if you make a selection in the timeline, the call will also be selected and highlighted in the tree views and vice versa.
                     <br/>You can use the navigator in the topright corner of the treeviews to navigate to previous and next instances if available.</p>
-                    </li>
-                    <li><h1>Finding</h1>
+                
+                     <br/>
+<a name="searching"></a>
+<a href="#top">Goto top</a>
+                   <h2>Searching</h2>
                     <p>Use Ctrl+F or press the magnify icon in the toolbar to search anything by name. This will allow you to find assemblies, namespaces, types and methods.<br/>Note that codetrack
                     takes in account the generics of a class and/or method. Eg. the Add method of List<T> can be shown multiple times, with different generics.
                     </p>
                     <br/><image src="./images/howto/analyze_find.png" width="120%"/><br/>
-                    </li>
-                    <li><h1>Markers</h1>
+<a name="colormarkers"></a>
+<a href="#top">Goto top</a>
+                     <br/>
+                    <h2>Color Markers</h2>
                     <p>You can right click on a method in the assembly tree to mark or unmark all instance of a certain method.</br>These markers will also be visible in the timeline.</p>
                     <br/><image src="./images/howto/analyze_mark.png" width="120%"/><br/>
-                    </li>
-                    <li><h1>Exceptions</h1>
+               
+                    <br/>
+<a name="exceptions"></a>
+<a href="#top">Goto top</a>
+                    <h2>Exceptions</h2>
                     <p>Exceptions will be marked red (as well in the timeline view as in the assembly tree). If an exception is caught, all methods where this exceptions passes in the stack will also be marked red.<br/>
-                    Move your mouse over the stack tree, you'll find more info about the exception in the deepest red item.</p>
-                    </li>
-                    <li><h1>Properties</h1>
-                    <p>In the properties tab, you'll find everything there is to know about a certain method call.</p>
-                    </li>
-                    <li><h1>Code</h1>
-                    <p>In the code window you can see the decompiled code of the currently selected method. Note that this will only work if the assembly can be found on the location were it's traced. In other words: this feature might not work if you open the trace files on a different machine.</p>
-                     <br/><image src="./images/howto/analyze_code.png" width="120%"/><br/>
-                    </li>
+                    Move your mouse over the stack tree, you'll find more info about the exception in the deepest red item. (this is only the case for non virtualized timelines)</p>
+					<p>
+					<br/><image src="./images/howto/exception_timeline.png" /><br/>
+					<br/>
+					In the exception overview ("Exceptions overview" button in the toolbar) you can browse through all exceptions that occured. This can be done by thread, exception class or just a flat list.
+					If you select an exception you get more information and you can goto the location in the timeline where the exception occured. You will also find a red marker in the ticks header.
+					By hovering over the tick you also get more information about the exception.
+					</p>
+					 <br/><image src="./images/howto/exception_overview_detail.png" /><br/>
+					
+                 
+					<br/>
+<a name="suspensions"></a>
+<a href="#top">Goto top</a>
+					<h2>Suspensions</h2>
+                    <p>Whenever a managed thread is suspended, this is also traced. If you zoom in in the timeline, suspensions will be marked with a red hatch pattern.
+					If the reason for the suspension is known, it will also be shown:<br/>
+					 <br/><image src="./images/howto/analyze_suspensions.png" width="120%" /><br/>
+                    </p>
+<a name="garbagecollects"></a>
+<a href="#top">Goto top</a>
+					 <br/>
+					<h2>Garbage collects</h2>
+                    <p>Garbage collects are shown as orange markers in the tickheader at the top of the timeline. 
+                    If GC info was enabled under the advanced expander (Collect window), hovering over the marker will also tell you which 
+                    generations were collected.
+                     <br/><image src="./images/howto/analyze_gc.png" /><br/>
+                    </p>
+<a name="properties"></a>
+<a href="#top">Goto top</a>
+					 <br/>
+                    <h2>Properties</h2>
+                    <p>In the properties tab, you'll find everything there is to know about a certain method call, or the selected namespace, type, method, ...
+					<br/>If you enabled argument tracing, you'll find the values for the parameters and return value in the property grid.
+                    <br/><image src="./images/howto/properties.png" /><br/>
+                    </p>
 
-                </ul>
+<a name="code"></a>
+<a href="#top">Goto top</a>
+                     <br/>
+                    <h2>Code</h2>
+                    <p>In the code window you can see the decompiled code of the currently selected method. 
+                    You can select the decompilation target language by clicking on the links.
+                    <br/><br/><image src="./images/howto/analyze_code.png" width="120%"/><br/><br/>
+                    Note that this will only work if the assembly can be found on the location were it's traced.
+                    If an assembly is missing, you can specify its location on the current machine by typing it in the textbox on the right and clicking retry.
+                    Most of the time, all other missing assemblies will be in the same location, 
+                    click the automap link to try and find other missing assemblies based on the one you already entered.
+                     <br/> <br/><image src="./images/howto/mapfiles.png" width="120%"/><br/>
+					</p>
+          <a href="#top">Goto top</a>
             </p>
         </ul>
     </div>

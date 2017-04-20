@@ -21,7 +21,11 @@
        <h2>Profiling modes</h2>
 
 <p>
-Codetrack provides a wide range of options for profiling:
+Codetrack provides a wide range of options for profiling.<br/>
+
+
+
+Also check out this post, where the difference is explained : <a href="https://wordpress.com/read/feeds/53780037/posts/1354177350" onclick="trackOutboundLink('https://wordpress.com/read/feeds/53780037/posts/1354177350',false); return false;" >The rocket tale (part I): Sampling vs Tracing</a>
 <ul>
 
     <li>
@@ -43,12 +47,14 @@ Codetrack provides a wide range of options for profiling:
         <p>
         Tracing means that EVERY call will be captured and all measurements will be 100% accurate. The more options you enable, the more information you will get, but the bigger your
         captured data will be and the slower your application will run. It will result in the same performance tree as the sampling mode, but here the timings will be exact and every call will be included.
+        In tracing mode you also get a precise invocation count for every method.
         </br>
         <ul>
             <li>
             <h1>Timeline</h1>
             <p>Enable this option if you want to have the timeline in your analyze window. This will give you an incredibly detailed view on ALL of your method calls. Including their position
             in the call stack and their start and end time.</br>
+            If you don't enable this option, you will still get a timeline, but it will be a virtual one (more info about that <a href="virtualtimeline.html">here</a>).
             </p>
             <p>
             If timeline is enabled, you can also choose to trace all method arguments. If you enable track objects, every object will have it's own unique id and can be identified.
@@ -58,8 +64,21 @@ Codetrack provides a wide range of options for profiling:
             <li>
             <h1>Scope</h1>
             <p>
-            Scope enables you to select the code you want to be profiled. This can be done based on Assembly, file path, method name or type name.
-            </br>You can add multiple rules to define the profiling scope. Use the exclamation mark to add an exclusion rule.
+            Scope enables you to select the code you want to be profiled. This can be done based on:
+            	<ul>
+				 <li>Assembly</li>
+				 <li>File path</li>
+				 <li>Method name</li>
+				 <li>Type name</li>
+				 <li>Thread name</li>
+				 <li>Process name</li>
+				 <li>Process path</li>
+             	</ul>
+             	You can add multiple rules to define the profiling scope. Use the exclamation mark to add an exclusion rule. 
+             	In this example a process will be traced if it's process name starts with MyProcess and all methods will be traced, except the ones whos assembly is under in C:\WINDOWS :
+             	<br/><br/>
+             	<image src="./images/howto/collect_advanced.png"/>
+            </br>
             </p>
             </li>
         </ul>
@@ -70,6 +89,43 @@ Codetrack provides a wide range of options for profiling:
 </ul>
 </p>
     </div>
+	
+	
+	    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83912260-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+/**
+* Functie die klikken op een uitgaande link in Analytics bijhoudt.
+* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
+* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
+* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
+*/
+var trackOutboundLink = function(url, external) {
+   if (external)
+   {
+	ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){ window.open(url, '_blank'); }
+      });
+   }
+   else
+   {
+   	ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+      });
+   }
+   
+} 
+</script>
 </body>
 
 
