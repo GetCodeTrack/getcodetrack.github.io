@@ -14,11 +14,22 @@
 	
 	<div style="margin:5% 20%;">
 		
-		
+
+
+
 		<!-- Form -->
-		<form action="javascript:;" onSubmit="submitform(this)">
+		<form method="POST" action="http://formspree.io/info@getcodetrack.com">
 			<h3>CODETRACK - Contact</h3>
-			<p>Please fill out the form below. I will try to get back to you asap.</p>
+			<p>Please fill out the form below.I will try to get back to you asap.
+		    <div style="font-weight:bold">You can also just drop me a mail at
+			<script type="text/javascript">
+ 										document.write("<a href=\"mailto");
+        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
+        								
+        </script>
+			</div>
+			</p>
+		
 			<div>
 				<label>
 					<span>Name:</span>
@@ -49,8 +60,7 @@
 			<div class="inner">
 				
 			
-				
-			
+		
 						<!--<li><a href="index.html" class="button big special">Back</a></li>-->
 						<button type="submit" style="margin:auto;width:200px;display:block"  class="button big alt">Send</button>
 				
