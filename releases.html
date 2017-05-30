@@ -48,8 +48,9 @@
 				<header class="major">
 				
 					<pCenter>Although I do my very best, sometimes I break stuff. That's why you can also get previous versions in case of an issue.
-					<br/>
+					<br/><b>
 					If you like CodeTrack, spread the word (a tweet, like or share goes a long way). If you have a problem, please let me know so I can fix it. 
+					</b>
 					<br/>
 					</pCenter>
 					<br/>
@@ -66,9 +67,49 @@
 
 				</header>
 
-					<div class="container">
-					<div class="row" >
-						<div class="12u" >
+				
+				
+				<div class="container">
+						<div class="row" >
+							<div class="12u" >
+							<section class="special box" >
+							<a name="latest"></a>
+								<h2>V1.0.2.0</h2>
+								<h1>(30-05-2017)</h1>
+								<ul>
+									
+									<li>[New] <b>Flamegraphs</b></li>
+									<li>[New] <b>Open recent traces</b></li>
+									<li>[New] Manual mode for CoreCLR</li>
+									<li>[New] Information about opened trace</li>
+									<br/>
+									
+									<li>[Improvement] <b>Single file deployment</b></li>
+									<li>[Improvement] Icons per trace type</li>
+									<li>[Improvement] UI fixes</li>
+									<li>[Improvement] Memory usage improvement</li>
+									<li>[Improvement] Perfo fixes (for analyzing sessions with lots of GC or exceptions)</li>
+								</ul>
+								
+								<a href="releases/codetrack_1_0_2_0.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_2_0.zip'); return false;">Download</a>
+								<h6><br/>SHA256:	ff2977e3a12e59c7eab0fd7e53d38cc13c1c5ddf0c1cc3e4d2328f13e99c8654</h6>
+								<p style="margin-left: 20px;color:darkred">
+									<br/>
+									<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.<br/>I can probably help you out with that if you drop me a mail at 
+								<script type="text/javascript">
+ 										document.write("<a href=\"mailto");
+        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
+        								
+        </script>.<br/>Thanks for your understanding!</b>
+								</p>							
+							</section>
+						</div>
+					</div>
+				</div>
+				
+				<div class="container">
+						<div class="row" >
+							<div class="12u" >
 							<section class="special box" >
 								<h2>V1.0.1.0</h2>
 								<h1>(20-04-2017)</h1>
@@ -98,7 +139,7 @@
 									<li>[Fix] Windows services with spaces in the name</li>
 									<li>[Fix] Wrong human readable duration</li>
 									<br/>
-									<a name="latest"></a>
+									
 									<li>[Improvement] Memory usage improvement</li>
 									<li>[Improvement] Timeline: scroll wheel, now scrolls vertically</li>
 									<li>[Improvement] Try auto locate dotcore</li>

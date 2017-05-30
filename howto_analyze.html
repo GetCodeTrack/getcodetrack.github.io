@@ -22,7 +22,7 @@
 
 <a name="top"></a>
 <p>Analyzing your profiled data can be a little overwhelming for the first time. In this documentation you can find all the necessary knowledge to understand what's going on:
-<li><a href="#sections">Sections</a></li>
+<li><a href="#sections">Sections (Tree, Flame, List, Timeline)</a></li>
 <li><a href="#toolbar">Toolbar</a></li>	
 <li><a href="#timelinegraph">Timeline Graph</a></li>
 <li><a href="#threadfiltering">Thread Filtering & Ordering</a></li>
@@ -34,29 +34,38 @@
 <li><a href="#suspensions">Suspensions</a></li>
 <li><a href="#garbagecollects">Garbage Collects</a></li>
 <li><a href="#properties">Properties</a></li>
+<li><a href="#recent">Recent Sessions</a></li>
+<li><a href="#currentinfo">Current Session Info</a></li>
 <li><a href="#code">Code</a></li>
 </p>
 
         <ul>
 <a name="sections"></a>
 
-            <h2>Sections</h2>
+            <h2>Sections (Tree, Flame, List, Timeline)</h2>
                 In the profiling view there are 4 main sections:
                 <ul>
-                    <li><h1>Per Thread</h1>
-                        <p>This view shows you a performance tree, split up per thread (and process if child processes were traced). The tree items are ordered by duration.<br/>
+                    <li><h1>Tree</h1>
+                        <p>This view shows you a performance tree, split up per thread (and process if child processes were traced) or combined. 
+						<br/>By clicking on 'Per thread' or 'Combined' you can switch between the two. The tree items are ordered by duration.<br/>
                         If you click on an item it will automatically expand all items below recursively for as long as they don't have any sibling nodes.This allows you to locate a bottle neck very fast.
-                        <br/><image src="./images/howto/analyze_tree.png" width="120%"/>
+                        
+						<br/><br/><image src="./images/howto/analyze_tree.png" width="120%"/>
                         </p>
                     </li>
-                    <li><h1>All</h1>
-                        <p>Similar to the 'Per Thread' view, this gives you a performance tree. The difference is that all trees from one process have been combined into 1 overall tree.
-                        <br/><image src="./images/howto/analyze_tree_all.png" width="120%"/>
+                    <li><h1>Flame</h1>
+                        <p>The flame graph shows you the same information as the Tree view but in a graphical way. From bottom to top are the different call stacks. 
+						The wider the boxes are, the longer the (sum of the) calls took. The colors range from yellow (lowest call count) to dark red (highest call count).
+						You can zoom in on the graph by using CTRL + mousewheel up (or down to zoom out). If you hover over the boxes you get some more information forthat particular call.
+						If you click on a method, this will get selected (so if you then move to the treeview you will automatically be at the right spot). Just as with the Tree, you can also switch between 
+						'Per thread' and 'Combined'. If you rescoped to a certain period in time, there might be some white colored methods, this means these calls are not completely within the time frame you selected (and thus have call count 0).
+						Threads are also shown in white at the start of your stack.<br/>
+                        <br/><image src="./images/howto/analyze_flame_perthread.png" width="120%"/>
                         </p>
                     </li>
 					 <li><h1>List</h1>
                         <p>This shows you a list view of all method calls organized by assembly, namespace and type. You can order the calls by clicking on the column headers.
-                        <br/><image src="./images/howto/analyze_listview.png" width="120%"/>
+                        <br/><br/><image src="./images/howto/analyze_listview.png" width="120%"/>
                         </p>
                     </li>
                     <li><h1>Timeline</h1>
@@ -67,7 +76,7 @@
                         <br/>From left to right is the time axis, and from top to bottom you go deeper in the call stack. Threads are stacked upon each other vertically, the thread names are shown at the front of each thread.<br/>
                         If you move your mouse over an item you will see an info tooltip. If you click on an item it will be selected and you will get the properties for that specific call in the properties tab (you can also select multiple items by using shift and/or control click).
                         If you had enabled parameters, you will find them in the properties window. If object tracking was on, every object will have it's unique id between square brackets (as well in the instance, as in all arguments).
-                        <br/><image src="./images/howto/analyze_properties.png" width="120%"/><br/>
+                        <br/><br/><image src="./images/howto/analyze_properties.png" width="120%"/><br/><br/>
                         On the right you'll find the assembly tree to browse and find all method calls by assembly,namespace and type.<br/>Bellow the assembly tree, is the heli(copter) view.
                         You can use this to select the viewport for the timeline and/or move it around. If a particular method is selected, all calls of this method will be highlighted in the heliview (little blue dots).
                         You can simply click once on an instance to select it. If you doubleclick that instance will be selected AND the view will be zoomed in on that item.
@@ -75,7 +84,7 @@
                         Navigating in the timeline can also be done by using the buttons in the toolbar (Zoom to fit, Zoom, Drag). You can also use ctrl+scroll to zoom in and out on particular piece in the view.
                         <br/>
                         If you hold the left mouse button while dragging the mouse you get a measurement tool overlay to find out how long any piece of the timeline takes.
-                        <br/><image src="./images/howto/analyze_measure.png" width="120%"/><br/>
+                        <br/><br/><image src="./images/howto/analyze_measure.png" width="120%"/><br/>
                         </p>
                     </li>
 				</ul>
@@ -85,7 +94,7 @@
 					<p>
 						The toolbar at the top provides all necessary tools to navigate and analyze your profiling session:
 						<br/>
-						<image src="./images/howto/toolbar.png"/>
+						<br/><image src="./images/howto/toolbar.png"/>
 
 					</p>
 <a name="timelinegraph"></a>
@@ -96,7 +105,7 @@
                         These metrics contain: Heap sizes (GC), processor usage by your process (CPU), memory usage by your process (RAM), disk io by your process (IO).
                         </br>Not that the heap sizes are collected from WMI, sometimes this doesn't work and these metrics are not available. The first measurement can only occur AFTER the first garbage collect.
                         </br>By hovering over the graph you can get the values of the metrics.
-                        <br/><image src="./images/howto/timeline_graph_detail.png"<br/>
+                        <br/><br/><image src="./images/howto/timeline_graph_detail.png"<br/>
 						</p>
 					
 <a name="threadfiltering"></a>
@@ -139,7 +148,7 @@
                      <br/>
                     <h2>Color Markers</h2>
                     <p>You can right click on a method in the assembly tree to mark or unmark all instance of a certain method.</br>These markers will also be visible in the timeline.</p>
-                    <br/><image src="./images/howto/analyze_mark.png" width="120%"/><br/>
+                    <image src="./images/howto/analyze_mark.png" width="120%"/><br/>
                
                     <br/>
 <a name="exceptions"></a>
@@ -172,7 +181,7 @@
                     <p>Garbage collects are shown as orange markers in the tickheader at the top of the timeline. 
                     If GC info was enabled under the advanced expander (Collect window), hovering over the marker will also tell you which 
                     generations were collected.
-                     <br/><image src="./images/howto/analyze_gc.png" /><br/>
+                     <br/><br/><image src="./images/howto/analyze_gc.png" /><br/>
                     </p>
 <a name="properties"></a>
 <a href="#top">Goto top</a>
@@ -180,12 +189,30 @@
                     <h2>Properties</h2>
                     <p>In the properties tab, you'll find everything there is to know about a certain method call, or the selected namespace, type, method, ...
 					<br/>If you enabled argument tracing, you'll find the values for the parameters and return value in the property grid.
-                    <br/><image src="./images/howto/properties.png" /><br/>
+                    <br/><br/><image src="./images/howto/properties.png" /><br/>
                     </p>
 
-<a name="code"></a>
+<a name="recent"></a>
 <a href="#top">Goto top</a>
                      <br/>
+					  <h2>Recent sessions</h2>
+                    <p>When no session has been opened for analysis yet, you get an overview of all previously traced and/or opened sessions.
+                    <br/><br/><image src="./images/howto/analyze_recent_startscreen.png" width="80%"/><br/><br/>
+                    If you already opened a session you can still get this list by clicking the history (clock) icon on the right of your tab titles.
+					You can then open a file from here too.
+                     <br/> <br/><image src="./images/howto/analyze_recent.png" width="80%"/><br/>
+					</p>
+<a name="currentinfo"></a>
+<a href="#top">Goto top</a>
+                     <br/>
+					  <h2>Current session info</h2>
+                    <p>By clicking the info button in the toolbar, you get a dialog showing you the settings you used for tracing and som extra info about the process(es) in the current session.
+                    <br/><br/><image src="./images/howto/analyze_sessioninfo.png" width="100%"/><br/><br/>
+                    
+					</p>
+		 <a name="code"></a>
+          <a href="#top">Goto top</a>
+            </p>
                     <h2>Code</h2>
                     <p>In the code window you can see the decompiled code of the currently selected method. 
                     You can select the decompilation target language by clicking on the links.

@@ -26,11 +26,6 @@ This can be used to profile any .NET code that is hosted within IIS.
 
 <p style="color:red">
 <i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
-Make sure the codetrack files are not placed in a special folder (like 'My Documents', your desktop , a network share,...).<br/>IIS doesn't like loading the profiling dll from such a location. I suggest just using something like 'c:\temp'
-</p>
-
-<p style="color:red">
-<i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
 For profiling IIS, it is necessary to run the profiler in elevated mode (you can do this by clicking on the elevation icon in the title bar, or run the profiler as admin).
 </p>
 
@@ -39,15 +34,18 @@ For profiling IIS, it is necessary to run the profiler in elevated mode (you can
 <li>Select the collect tab (on the left of the application)
 </li>
 <li>Select ‘Process’ and click the arrow on the right to go to the next step.<br/>
+<br/>
 <image src="./images/howto/profileiis01.png">
 </br>
 </li>
 
 <li>Now you can select the website, wcf service,... you want to profile. Use the dropdown button to select your code.<br/>
+<br/>
 <image src="./images/howto/profileiis02.png">
 If it's a website or wcf service, codetrack will try to give you a list of all instances in IIS. If yours is not listed, you can always select it manually.</br>
 You will be asked to select the main dll of your application. This is necessary to determine bitness and the DotNet version.
 The bittness and DotNet version should be selected automatically. Should this be incorrect, you can still change this manually.</br>
+<br/>
 <image src="./images/howto/profileiis03.png">
 Now click the arrow on the right to go to the next step.<br/>
 </br>
@@ -58,6 +56,7 @@ Now it's time to decide upon your level of detail. Important to remember, is tha
 If you just started investigating a problem, it might be a good idea to use the sampling option. Since this will be the most performant profiling mode.
 From this information you can then start another session with much more detail, profiling only the code that causes the performance issue.
 </br>For more information about the different profiling settings, read <a href="profilingmodes.html">Profiling Modes</a>.
+<br/>
 <br/>
 <image src="./images/howto/profileiis04.png">
 <br/>Now we are ready for the last step, click on the right arrow to continue.
@@ -70,6 +69,7 @@ space if you profile with lots of detail).<br/>
 </br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable the processing of the data.
 This allows you to do the number crunching offline on another machine.
 </br>
+<br/>
 <image src="./images/howto/profileiis05.png">
 <br/>
 If you want to start profiling immediately, make sure you click the record button, otherwise click the pause button and hit record from the moment

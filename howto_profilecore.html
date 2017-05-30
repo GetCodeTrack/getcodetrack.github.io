@@ -22,7 +22,6 @@
 
 <p>
 This can be used to profile an application built for .NET Core (console apps and/or webservices). </br>
-Please note that that this functionality is available since v1.0.0.5
 </p>
 <p>
 This guide is written to trace while launching your core CLR code from the dotnet.exe. If there would be cases where your core CLR code gets loaded into other hosts, you can also
@@ -37,6 +36,7 @@ Bear in mind that if your process needs to be elevated you need to run the profi
 <li>Select the collect tab (on the left of the application)
 </li>
 <li>Select ‘CORE CLR’ and click the arrow on the right to go to the next step.<br/>
+<br/>
 <image src="./images/howto/coreclr01.png">
 </br>
 </li>
@@ -45,8 +45,17 @@ Bear in mind that if your process needs to be elevated you need to run the profi
 The bittness will be selected automatically. Should this be incorrect, you can still change this manually.</br>
 Then specify the dll containing your Core CLR code.</br>
 You can also override the working directory. (For webservices, you might need to select the location of your project folder in order to properly launch your service.)
-Now click the arrow on the right to go to the next step.<br/>
+<br/>
+<br/>
 <image src="./images/howto/coreclr02.png">
+</br>
+Alternatively you can select the 'Manual' mode to specify your own startup command.</br>
+This allows you to run dotnet.exe with custom arguments (like test for instance).</br>
+In this case you need to select the bitness yourself. <b>
+Make sure you add double quotes around paths that contain spaces!</b><br/>
+Now click the arrow on the right to go to the next step.
+<br/>
+<image src="./images/howto/coreclr03.png">
 </br>
 </li>
 </br>
@@ -56,7 +65,8 @@ If you just started investigating a problem, it might be a good idea to use the 
 From this information you can then start another session with much more detail, profiling only the code that causes the performance issue.
 </br>For more information about the different profiling settings, read <a href="profilingmodes.html">Profiling Modes</a>.
 <br/>
-<image src="./images/howto/coreclr03.png">
+<br/>
+<image src="./images/howto/coreclr04.png">
 </br>Now we are ready for the last step, click on the right arrow to continue.
 </br>
 </li>
@@ -69,7 +79,8 @@ If you want to als profile a child process (started by our own process), enable 
 </br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable the processing of the data.
 This allows you to do the number crunching offline on another machine.
 </br>
-<image src="./images/howto/coreclr04.png">
+</br>
+<image src="./images/howto/coreclr05.png">
 <br/>
 If you want to start profiling immediately, make sure you click the record button, otherwise click the pause button and hit record from the moment
 you want to start capturing data.<br/>
