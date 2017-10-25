@@ -7,8 +7,9 @@ As you can imagine this was a lot of work and there's still a lot to be done.
 If you would like to support the development of CodeTrack,
 you can make a difference by donating.
 
-All help is greatly appreciated... 
-Thanks for your help,
+Also please follow @Codetrack4Net on twitter and tell others about it!
+
+Thanks a lot for your help,
 Nico",
  "URL" : "https://pledgie.com/campaigns/32543",
  "URLText" : "Pledgie",
