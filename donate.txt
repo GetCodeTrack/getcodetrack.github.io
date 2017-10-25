@@ -1,13 +1,15 @@
 {
 "Title": "Like CodeTrack ?",
 "Message" : 
-"CodeTrack is solely built in my free time.
+"Hi there! CodeTrack is solely built in my free time.
 As you can imagine this was a lot of work and there's still a lot to be done.
 
 If you would like to support the development of CodeTrack,
 you can make a difference by donating.
 
-All help is greatly appreciated... Thanks in advance !",
+All help is greatly appreciated... 
+Thanks for your help,
+Nico",
  "URL" : "https://pledgie.com/campaigns/32543",
  "URLText" : "Pledgie",
  "YesText" : "Donate",
