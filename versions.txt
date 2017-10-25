@@ -6,5 +6,4 @@ svc;http://codetrackfeedbackservice.azurewebsites.net
 1.0.0.6;www.getcodetrack.com/releases/codetrack_1_0_0_6.zip
 1.0.0.7;www.getcodetrack.com/releases/codetrack_1_0_0_7.zip
 1.0.1.0;www.getcodetrack.com/releases/codetrack_1_0_1_0.zip
-1.0.2.0;www.getcodetrack.com/releases/codetrack_1_0_2_0.zip
-
+1.0.2.0;www.getcodetrack.com/releases/codetrack_1_0_2_0.zip;Good news! Version 1.0.2.0 is available!\nNew in this version:\n\t*Feature1\n\tFeature2\n\tFeature3\nHappy profiling!
