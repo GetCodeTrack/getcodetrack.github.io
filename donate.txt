@@ -1,0 +1,8 @@
+{
+"Title": "Like CodeTrack ?",
+"Message" : "Building CodeTrack is a lot of work and there's still a lot to be done.
+If you would like to support the development of CodeTrack, you can make difference by donating.
+All help is greatly appreciated...
+Thanks in advance !",
+ "URL" : "https://pledgie.com/campaigns/32543",
+}
