@@ -10,4 +10,6 @@ you can make a difference by donating.
 All help is greatly appreciated... Thanks in advance !",
  "URL" : "https://pledgie.com/campaigns/32543",
  "URLText" : "Pledgie",
+ "YesText" : "Donate",
+ "NoText" : "No thanks, I don't want to support"
 }
