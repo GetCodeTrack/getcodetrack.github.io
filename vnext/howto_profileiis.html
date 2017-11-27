@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
+       <h2>Profiling a process hosted in IIS</h2>
+
+<p>
+This can be used to profile any .NET code that is hosted within IIS.
+</p>
+
+<p style="color:red">
+<i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
+For profiling IIS, it is necessary to run the profiler in elevated mode (you can do this by clicking on the elevation icon in the title bar, or run the profiler as admin).
+</p>
+
+
+<ol>
+<li>Select the collect tab (on the left of the application)
+</li>
+<li>Select ‘Process’ and click the arrow on the right to go to the next step.<br/>
+<br/>
+<image src="./images/howto/profileiis01.png">
+</br>
+</li>
+
+<li>Now you can select the website, wcf service,... you want to profile. Use the dropdown button to select your code.<br/>
+<br/>
+<image src="./images/howto/profileiis02.png">
+If it's a website or wcf service, codetrack will try to give you a list of all instances in IIS. If yours is not listed, you can always select it manually.</br>
+You will be asked to select the main dll of your application. This is necessary to determine bitness and the DotNet version.
+The bittness and DotNet version should be selected automatically. Should this be incorrect, you can still change this manually.</br>
+<br/>
+<image src="./images/howto/profileiis03.png">
+Now click the arrow on the right to go to the next step.<br/>
+</br>
+</li>
+
+<li>
+Now it's time to decide upon your level of detail. Important to remember, is that the more detail you require, the higher the impact profiling will have on your performance.
+If you just started investigating a problem, it might be a good idea to use the sampling option. Since this will be the most performant profiling mode.
+From this information you can then start another session with much more detail, profiling only the code that causes the performance issue.
+</br>For more information about the different profiling settings, read <a href="profilingmodes.html">Profiling Modes</a>.
+<br/>
+<br/>
+<image src="./images/howto/profileiis04.png">
+<br/>Now we are ready for the last step, click on the right arrow to continue.
+<br/><br/>
+</li>
+
+<li>
+In this last section you need to select the destination of the profiling data. (Make sure you select a location with enough
+space if you profile with lots of detail).<br/>
+</br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable the processing of the data.
+This allows you to do the number crunching offline on another machine.
+</br>
+<br/>
+<image src="./images/howto/profileiis05.png">
+<br/>
+If you want to start profiling immediately, make sure you click the record button, otherwise click the pause button and hit record from the moment
+you want to start capturing data.<br/>
+Now you are ready to start profiling. If you click the play button, IIS will be restarted (this might take a while). Now you can browse to your website or start calling your wcf service. 
+<br/>
+If you press the stop button Codetrack will reset IIS again (again: this might take a while).
+</br>
+</li>
+
+</ol>
+    
+    </div>
+</body>
+
+

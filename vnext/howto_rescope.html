@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
+       <h2>Rescoping</h2>
+
+        <p>
+        Rescoping allows you to select one or more ranges in your timeline and then only get performance info for the selected ranges.
+        This enables you to zoom in on particular moments of your applications lifetime. Rescoping affects every view on your data. This means
+        not only the timeline itself gets sliced, but also the information in the thread views, list view, exceptions, assembly view etc.
+        </p>
+        <h1>How to rescope</h1>
+        <ol>
+            <li>Goto the timeline view</li>
+            <li>Select one more ranges in the ticks header. You can do this in 2 ways:
+                <br/>
+                <image src="./images/howto/ticks_header.png"/>
+
+                <ul>
+                    <li>
+                    Simply click your left mousebutton in the ticks header at the start of your range. 
+                    Then drag your mouse to the end of the range and release the mouse button.
+                    You should now have 2 markers and a slected range in between (marked by the blue color band).
+                    </li>
+
+                    <image src="./images/howto/ticks_header_markers.png"/>
+<br/><br/>
+                    <image src="./images/howto/ticks_header_ranges.png"/>
+<br/><br/>
+                    <li>
+                    You can double click anywhere in the ticks header to add 1 or more markers. 
+                    Next, you can single click between markers to select or deselect ranges.
+                    </li>
+                </ul>
+                You can zoom in (CTRL + Mouse scroll up) on a marker and position it more exact if needed.
+                <br/>Markers can be deleted by double clicking on them. Ranges can be selected or deselected by single clicking between the markers.
+            
+            </li>
+            <li>When you are happy with the selected ranges, click the rescope button to rescope to the selected ranges.<br/>
+            <image src="./images/howto/rescope_button.png"/>
+            </li>
+            <li>
+            After rescoping you should see that the timeline, as well as all other parts reflect this change ("Per Thread", "All", "List", Exception overview, Thread filtering,...)
+            </li>
+            
+            <br/>
+          
+            <i class="fa fa-exclamation-triangle fa-1X" style="color:red"  aria-hidden="false"></i>
+<h2 style="color:red">Important note:</h2>
+<p style="color:red">
+
+The data that will be in scope is the data of every green tick in your range. In other words: if you select a range not containing any sample (green tick), you will have no data left.
+<br/>Another consequence is that possibly there will be methods in your trees that seem to be out of your selected range, this is because their sample (green tick) does appear in your range.
+<br/>The easiest way to grasp this, is to realize that if you select a sample (green tick), all methods that occur after this tick and before the next tick are added to your selected range.
+</p>         
+              
+        </ol>
+
+        <h1>Going back to a previous or the full scope</h1>
+        <ol>
+            <li>Goto the timeline view</li>
+            <li>Click on the arrow next to the rescope button</li>
+            <li>Now select an item in the rescope history to rollback to that scope.
+                <br/> <br/><image src="./images/howto/rescope_history.png" width="80%"/><br/>
+            </li>
+        </ol>
+    </div>
+</body>
+
+
