@@ -21,7 +21,7 @@
        <h2>Virtual timeline</h2>
 
 <p>
-When you don't select tracing with timeline enabled, CodeTrack will still provide a timeline in the output.
+When you don't select Deeptrace rulesets, CodeTrack will still provide a timeline in the output.
 The difference is that this is a virtual timeline. It is constructed based on the sampled stacks.<br/>
 You can recognize the virtual timeline by the orange color scheme and by the warning in the top right corner.
 It is important to know that a timeline is virtual because it has a few consequences you need to take in account when analyzing your data.
@@ -62,10 +62,10 @@ There is a slight but important difference between tracing and sampling mode, so
 			<br/>
 			While more accurate than sampling, this still has some important consequences you need to keep in mind while looking at your virtual timeline:
 			<ul>
-				<li>The duration of a method is correct, but the count is not (for simplicity, multiple calls are grouped together into 1)</li>
-				<li>The position is not exact: the method(s) definitely occured during the 100 ms sample range, but we don't know the exact position or the order in which tey occured.</li>
+				<li>The duration of a method is correct, but the count is not (for simplicity, multiple calls are grouped together into 1). However the real call count is displayed on each virtual block.</li>
+				<li>The position is not exact: the method(s) definitely occured during the 100 ms sample range, but we don't know the exact position or the order in which they occured.</li>
 				<li>If a method is started but not ended in a particular snapshot, it is automatically glued to the next one. In this case this is correct.</li>
-				<li>No method calls are missing (although the count may differ)</li>
+				<li>No method calls are missing (although in the timeline some of them might be grouped into 1 block)</li>
 			</ul>
 
 			The moment at which a snapshot is taken, is marked at the top of every thread by means of a little green tick. This gives you an idea of the exact timeframe in which the presented method calls occur (even though their position is not exact, we know for sure they occure between the green ticks):
@@ -73,13 +73,20 @@ There is a slight but important difference between tracing and sampling mode, so
 			<image src="./images/howto/virtual_timeline_ticks.png" />
 		</p>
 	</li>
+	<li>
+			<h2>Mixed mode with DeepTrace</h2><br/>
+			<p>
+				As you can read in <a href="profilingmodes.html">Profiling modes</a>, it is possible to combine Deeptrace mode with regular tracing. In that case, the resulting 
+				timeline will contain virtual items (tracing) combined with real items (Deeptracing) of which the exact start and stop time is known.
+			</p>
+		</li>
 </ul>
 </p>
 <br/>
 <h2>What's the use ?</h2>
 <p>If the virtual timeline is not exact, then why is it provided anyway?<br/>
-First of all, it gives you an idea of what is going on during the lifetime of your application. Next to giving you information about the total performance of you method calls, 
-you can now also get an idea about the chronological order and also see if at particular moments methods tend to take longer.
+First of all, it gives you an idea of what is going on during the lifetime of your application. Next to giving you information about the total performance of your method calls, 
+you can now also get a rough idea about the chronological order and also see if at particular moments in time methods tend to take longer.
 <br/>
 Another, more important, reason is that this virtual timeline facilitates the rescope feature (more info <a href="howto_rescope.html">here</a>).
 Based on the virtual timeline you can specify ranges to rescope all the other views, so you can for instance compare 2 separate moments in time.

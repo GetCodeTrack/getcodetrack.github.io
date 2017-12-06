@@ -67,17 +67,18 @@
 
 The data that will be in scope is the data of every green tick in your range. In other words: if you select a range not containing any sample (green tick), you will have no data left.
 <br/>Another consequence is that possibly there will be methods in your trees that seem to be out of your selected range, this is because their sample (green tick) does appear in your range.
-<br/>The easiest way to grasp this, is to realize that if you select a sample (green tick), all methods that occur before this tick and after the previous tick is added to your selected range.
+<br/>The easiest way to grasp this, is to realize that if you select a sample (green tick), all methods that occur after this tick and before the next tick are added to your selected range.
 </p>         
               
         </ol>
 
-        <h1>How to go back to the full time range</h1>
+        <h1>Going back to a previous or the full scope</h1>
         <ol>
             <li>Goto the timeline view</li>
-            <li>Deselect all ranges in the tickheader, by single clicking between markers with a selected range 
-            (all the blue bands should be gone). The markers don't need to be deleted if you need them later on.
-            <li>Click the rescope button, the scope will now be reset to the full range</li>
+            <li>Click on the arrow next to the rescope button</li>
+            <li>Now select an item in the rescope history to rollback to that scope.
+                <br/> <br/><image src="./images/howto/rescope_history.png" width="80%"/><br/>
+            </li>
         </ol>
     </div>
 </body>

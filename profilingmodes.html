@@ -18,17 +18,24 @@
 </head>
 <body id="top">
     <div style="width: 60%; height: 80%; margin: auto;display: block">
+            <a name="top"></a>
        <h2>Profiling modes</h2>
 
-<p>
-Codetrack provides a wide range of options for profiling.<br/>
-
-
-
-Also check out this post, where the difference is explained : <a href="https://getcodetrack.wordpress.com/2017/02/25/the-rocket-tale-part-i-sampling-vs-tracing/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/2017/02/25/the-rocket-tale-part-i-sampling-vs-tracing/',false); return false;" >The rocket tale (part I): Sampling vs Tracing</a>
+       <p>
+Codetrack provides a wide range of options for profiling:
 <ul>
+    <li><a href="#Sampling">Sampling</a></li>
+    <li><a href="#Tracing">Tracing</a></li>	
+    <li><a href="#DeepTrace">DeepTrace</a></li>
+</ul>
+Also check out this post, where the difference between sampling and tracing is explained : <a href="https://wordpress.com/read/feeds/53780037/posts/1354177350" onclick="trackOutboundLink('https://wordpress.com/read/feeds/53780037/posts/1354177350',false); return false;" >The rocket tale (part I): Sampling vs Tracing</a>
+<br/>
+<br/>
 
+<ul>
+    
     <li>
+        <a name="Sampling"></a>
         <h1>Sampling</h1>
         <p>
         In this mode, the threads of your process are being suspended periodically and a snapshot of the call stack for every thread is taken.
@@ -42,49 +49,67 @@ Also check out this post, where the difference is explained : <a href="https://g
         </br>
         </p>
  </li>
-  <li>
+<li>
+        <a name="Tracing"></a>
         <h1>Tracing</h1>
+        <a href="#top">Goto top</a>		
         <p>
         Tracing means that EVERY call will be captured and all measurements will be 100% accurate. The more options you enable, the more information you will get, but the bigger your
         captured data will be and the slower your application will run. It will result in the same performance tree as the sampling mode, but here the timings will be exact and every call will be included.
         In tracing mode you also get a precise invocation count for every method.
+        <br/>
+        Tracing does not trace start and stop times for each call. It results in a virtual timeline where calls to the same method are grouped together into one larger block.
+        More info on virtual timelines can be found here: <a href="virtualtimeline.html">Virtual Timelines</a>
         </br>
-        <ul>
-            <li>
-            <h1>Timeline</h1>
-            <p>Enable this option if you want to have the timeline in your analyze window. This will give you an incredibly detailed view on ALL of your method calls. Including their position
-            in the call stack and their start and end time.</br>
-            If you don't enable this option, you will still get a timeline, but it will be a virtual one (more info about that <a href="virtualtimeline.html">here</a>).
-            </p>
-            <p>
-            If timeline is enabled, you can also choose to trace all method arguments. If you enable track objects, every object will have it's own unique id and can be identified.
-            </p>
+    
 
-            </li>
-            <li>
-            <h1>Scope</h1>
+        <ul>
+            <h1>Filtering</h1>
             <p>
-            Scope enables you to select the code you want to be profiled. This can be done based on:
-            	<ul>
-				 <li>Assembly</li>
-				 <li>File path</li>
-				 <li>Method name</li>
-				 <li>Type name</li>
-				 <li>Thread name</li>
-				 <li>Process name</li>
-				 <li>Process path</li>
-             	</ul>
-             	You can add multiple rules to define the profiling scope. Use the exclamation mark to add an exclusion rule. 
-             	In this example a process will be traced if it's process name starts with MyProcess and all methods will be traced, except the ones whos assembly is under in C:\WINDOWS :
-             	<br/><br/>
-             	<image src="./images/howto/collect_advanced.png"/>
+            Trace filters enable you to select the code you want to be profiled. This can be done based on:
+                <ul>
+                    <li>Assembly</li>
+                    <li>File path</li>
+                    <li>Method name</li>
+                    <li>Full method name</li>
+                    <li>Full method name and arguments</li>
+                    <li>Type name</li>
+                    <li>Thread name</li>
+                    <li>Process name</li>
+                    <li>Process path</li>
+                </ul>
+                You can add multiple rules to define the profiling scope. For a method to be traced all rules MUST match.
+                You can use the assembly picker to help you fill in the right arguments.
+                In this example a process will be traced if it's process name starts with MyProcess and all methods will be traced, except the ones whos assembly is under in C:\WINDOWS :
+                <br/><br/>
+                <image src="./images/howto/collect_advanced.png"/>
             </br>
             </p>
-            </li>
         </ul>
-        </p>
     </li>
 
+    </p>
+</li>
+
+<li>
+        <a name="DeepTrace"></a>
+        
+        <h1>DeepTrace</h1>
+        <a href="#top">Goto top</a>	
+        <p>
+            DeepTrace is the most advanced mode. Here you can enable predefined rulesets (provided by plugins or your own library).
+            Use the pencil to add another ruleset just for the current session (if you're really happy with your created ruleset, you can promote it to your library).
+            These rulesets are very similar to trace filters. Except that they define the methods that will have their start and stop time traced.
+            Also arguments can be traced for these methods. For more info on rulesets goto <a href="rulesets.html">Rulesets</a>.
+            <br/>
+            On top of methods, also fields can be specified to be traced when their parent type is traced as an argument, instance or return value.
+            <br/>
+            It is also possible to combine (regular) tracing with deeptrace by selecting 'Enable regular trace'. This allows you to deeptrace just a few methods and still
+            have all methods in your timeline. For this default tracing you can also use the Filtering as mentioned under <a href="#Tracing">Tracing</a>.
+            <br/>
+            Bear in mind that deeptracing lots of calls can have a big impact on the performance of your application!
+        </p>	
+</li>
 
 </ul>
 </p>

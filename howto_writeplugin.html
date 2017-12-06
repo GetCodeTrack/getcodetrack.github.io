@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>CodeTrack</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/skel-layers.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/mine.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-xlarge.css" />
+        </noscript>
+    </head>
+    <body id="top">
+        <div style="width: 60%; height: 80%; margin: auto;display: block">
+           <h2>writing your own plugins</h2>
+    
+            <p>
+            CodeTrack has its own plugin system which allows you to extend it the way you want. Your plugins can also be shared with others.
+            <br/>
+            Plugins are usually based on one or more Deeptrace method rulesets, so please make sure you read about rulesets first: <a href="rulesets.html">DeepTrace method rulesets</a>
+            <br/>
+           
+            <ul>
+                Here you can find some info on creating
+                <li><b>Viewplugins :</b> giving you the possibility to visualize your traced data any way you want.</li>
+                <li><b>Valueplugins :</b> these allow you to represent argument values in a custom way.</li>
+            </ul> 
+            </p>
+    
+            <p>
+                <ol>
+                    <li>Go to the sample github page (<a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin"  onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin',false); return false;">My Plugin github</a>).</li>   
+                    <li>Download the sample</li> 
+                    <li>In the project properties, rename "MyPlugin.Plugins" to whatever you like (just make sure the assembly ends with .plugins.dll for codetrack to find
+                         and load your plugin</li>
+                    <li>Choose a namespace of your liking</li>
+                    <li>Replace all 'MyPlugin' string with the name you choose eralier</li>
+                    <li>Replace all 'MyNamespace' string with the namespace you choose eralier</li>
+                    <li>In MyPlugin.cs, make sure to <b>replace the guid</b> with a new one. This is necessary to uniquely identify your plugin (especially if you want to share it later)</li>
+                    <li>Now build the project (make sure to restore the nuget packages)</li>
+                    <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version in %localappdata%/codetrack/ (both work equally fine)</li>
+                    <li>Start Codetrack and go to the settings page and select 'plugins', now you should see your plugin.</li>
+                    <li>If you open a trace and go to the timeline view, your plugin should be listed with the 2 default plugins. If all goes well you should see a clickable button</li>
+                </ol>
+
+            </p>
+            
+            <br/>
+            <p>Congratulations, you now have a hello world plugin!
+                <br/>Of course that's not so usefull yet. To get some inspiration, the two plugins that are provided with 
+                CodeTrack by default, are also available in Github : <a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins" onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins',false); return false;">CodeTrack.Plugins on github</a>
+            </p>
+
+            <h1>
+               Sit tight, more detailed info on building plugins will follow soon !
+            </h1>
+    
+
+        
+        </div>
+    </body>
+    
+    
+    

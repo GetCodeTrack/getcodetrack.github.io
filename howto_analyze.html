@@ -22,7 +22,7 @@
 
 <a name="top"></a>
 <p>Analyzing your profiled data can be a little overwhelming for the first time. In this documentation you can find all the necessary knowledge to understand what's going on:
-<li><a href="#sections">Sections (Tree, Flame, List, Timeline)</a></li>
+<li><a href="#sections">Sections (Tree, Flame, List, Timeline, Plugin)</a></li>
 <li><a href="#toolbar">Toolbar</a></li>	
 <li><a href="#timelinegraph">Timeline Graph</a></li>
 <li><a href="#threadfiltering">Thread Filtering & Ordering</a></li>
@@ -42,8 +42,8 @@
         <ul>
 <a name="sections"></a>
 
-            <h2>Sections (Tree, Flame, List, Timeline)</h2>
-                In the profiling view there are 4 main sections:
+            <h2>Sections (Tree, Flame, List, Timeline, Plugins)</h2>
+                In the profiling view there are 5 main sections:
                 <ul>
                     <li><h1>Tree</h1>
                         <p>This view shows you a performance tree, split up per thread (and process if child processes were traced) or combined. 
@@ -64,15 +64,23 @@
                         </p>
                     </li>
 					 <li><h1>List</h1>
-                        <p>This shows you a list view of all method calls organized by assembly, namespace and type. You can order the calls by clicking on the column headers.
-                        <br/><br/><image src="./images/howto/analyze_listview.png" width="120%"/>
+                        <p>This shows you a list view of all method calls organized by assembly, namespace and type. You can order the calls by clicking on the 
+                            column headers.<br/>There are two kind of list views:
+                            <ul>
+                                <li><b>Flat:</b> shows you a flat list of all methods
+                                    <br/><br/><image src="./images/howto/analyze_listview.png" width="120%"/>
+                                </li>
+                                <li><b>Grouped:</b> shows the methods grouped by assembly, namsepace and type
+                                    <br/><br/><image src="./images/howto/analyze_listview_grouped.png" width="120%"/>
+                                </li>
+                            </ul>
+                        
                         </p>
                     </li>
                     <li><h1>Timeline</h1>
                         <p>
-                        The timeline view is only available if you selected this mode while configuring your profiling session (see <a href="profilingmodes.html">Profiling modes</a>).
-						However, if you didn't enable the timeline, you will still get a virtual version (see <a href="virtualtimeline.html">Virtual timeline</a>). You can recognize this by the orange theme, and the warning in the top left corner.
-
+                        Depending on your trace configuration, your timeline might look a little different. Methods that are DeepTraced (see <a href="Profilingmodes">Profiling modes</a>) appear in blue, all 
+                        others (sampling and regular tracing) appear in orange.
                         <br/>From left to right is the time axis, and from top to bottom you go deeper in the call stack. Threads are stacked upon each other vertically, the thread names are shown at the front of each thread.<br/>
                         If you move your mouse over an item you will see an info tooltip. If you click on an item it will be selected and you will get the properties for that specific call in the properties tab (you can also select multiple items by using shift and/or control click).
                         If you had enabled parameters, you will find them in the properties window. If object tracking was on, every object will have it's unique id between square brackets (as well in the instance, as in all arguments).
@@ -85,6 +93,24 @@
                         <br/>
                         If you hold the left mouse button while dragging the mouse you get a measurement tool overlay to find out how long any piece of the timeline takes.
                         <br/><br/><image src="./images/howto/analyze_measure.png" width="120%"/><br/>
+                        </p>
+                    </li>
+                    <li><h1>Plugins</h1>
+                        <p>
+                            Depending on your tracing settings, some plugins might be enabled. If you write your own plugins they will also be shown here if available.
+                            CodeTrack comes with 2 plugins : 
+                            <ul>
+                                <li><b>Generic plugin:</b>This plugin is available as soon as 1 deeptraced method is present and shows all deeptraced method calls of all threads
+                                 in chronological order with their arguments. Selecting an item will also show
+                                its location in the timeline and allows you to navigate to that specific place.<br/>A filter is also provided at the top of the list.
+                                <br/><br/><image src="./images/howto/analyze_plugin_generic.png" width="120%"/>    
+                            </li>
+                                <li><b>Console Plugin:</b>This plugin is available if a trace was made with the console ruleset enabled. It gives you a clickable presentation of the console output during tracing.<br\>
+                                From this console output you can easily navigate to a certain position in the timeline by just clicking on an item in the output.</li>
+                                <br/><br/><image src="./images/howto/analyze_plugin_console.png" width="120%"/>    
+                            </ul>
+                            
+                        
                         </p>
                     </li>
 				</ul>
@@ -215,13 +241,16 @@
             </p>
                     <h2>Code</h2>
                     <p>In the code window you can see the decompiled code of the currently selected method. 
-                    You can select the decompilation target language by clicking on the links.
+                    You can select the decompilation target language by clicking on the links. 
                     <br/><br/><image src="./images/howto/analyze_code.png" width="120%"/><br/><br/>
                     Note that this will only work if the assembly can be found on the location were it's traced.
                     If an assembly is missing, you can specify its location on the current machine by typing it in the textbox on the right and clicking retry.
                     Most of the time, all other missing assemblies will be in the same location, 
                     click the automap link to try and find other missing assemblies based on the one you already entered.
                      <br/> <br/><image src="./images/howto/mapfiles.png" width="120%"/><br/>
+                     <br/>
+                     If pdbs where available at the time of tracing and they can be found
+                     at the expected location, you can also show the original source code in this window.
 					</p>
           <a href="#top">Goto top</a>
             </p>
