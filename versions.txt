@@ -8,4 +8,5 @@ svc;http://codetrackfeedbackservice.azurewebsites.net
 1.0.1.0;www.getcodetrack.com/releases/codetrack_1_0_1_0.zip
 1.0.2.0;www.getcodetrack.com/releases/codetrack_1_0_2_0.zip
 1.0.3.1;www.getcodetrack.com/releases/codetrack_1_0_3_1.zip;New stuff is waiting!;You're using Version #CURRENTVERSION#, but Version 1.0.3.1 is available!\nHappy profiling!
+1.0.3.1;www.getcodetrack.com/releases/codetrack_1_0_3_2.zip;A new version is waiting!;You're using Version #CURRENTVERSION#, but Version 1.0.3.2 is available!\nHappy profiling!
 

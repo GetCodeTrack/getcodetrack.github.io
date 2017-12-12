@@ -44,7 +44,11 @@
                     <li>Replace all 'MyNamespace' string with the namespace you choose eralier</li>
                     <li>In MyPlugin.cs, make sure to <b>replace the guid</b> with a new one. This is necessary to uniquely identify your plugin (especially if you want to share it later)</li>
                     <li>Now build the project (make sure to restore the nuget packages)</li>
-                    <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version in %localappdata%/codetrack/ (both work equally fine)</li>
+                    <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version in %localappdata%/codetrack/ (both work equally fine)
+                    <br/><b>Note that your file should end with <i>.plugins.dll</i> for codetrack to consider it a plugin assembly!</b>
+                    </li>
+
+                    </li>
                     <li>Start Codetrack and go to the settings page and select 'plugins', now you should see your plugin.</li>
                     <li>If you open a trace and go to the timeline view, your plugin should be listed with the 2 default plugins. If all goes well you should see a clickable button</li>
                 </ol>
