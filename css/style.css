@@ -856,8 +856,10 @@
 		}
 
 		.wrapper.style2 {
-			background: #192024;
+			background: #07053b;
 			color: #c5c7c8;
+			padding: 1.5em 0 1em 1em;
+			margin: 0.5em 0 1em 0;
 		}
 
 			.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {

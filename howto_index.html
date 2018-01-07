@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>CodeTrack</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -10,97 +11,177 @@
     <script src="js/skel-layers.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/mine.js"></script>
-   
-    
-    <link rel="stylesheet" href="css/skel.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style-xlarge.css" />
+
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+        <link rel="stylesheet" href="css/default-skin/default-skin.css">
+    </noscript>
+
     <link rel="stylesheet" href="css/mine.css">
-    <link rel="stylesheet" href="css/default-skin/default-skin.css">
 
 
 </head>
+
 <body id="top">
+
     <div style="width: 60%; height: 80%; margin: auto;display: block">
-       <h2>General</h2>
-            <ul>
-                <li><a href="https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/',false); return false;" ><h1>Why should you use codetrack ?</h1></a></li>
-                <li><a href="https://wordpress.com/read/feeds/53780037/posts/1354177350" onclick="trackOutboundLink('https://wordpress.com/read/feeds/53780037/posts/1354177350',false); return false;" ><h1>The rocket tale (part I): Sampling vs Tracing</h1></a></li>
-                <li><a href="profilingmodes.html" onclick="trackOutboundLink('profilingmodes.html',false); return false;"><h1>Profiling modes</h1></a></li>
-                <li><a href="rulesets.html" onclick="trackOutboundLink('rulesets.html',false); return false;"><h1>Deeptrace Rulesets</h1></a></li>
-				<li><a href="virtualtimeline.html" onclick="trackOutboundLink('virtualtimeline.html',false); return false;"><h1>Virtual timelines explained</h1></a></li>
-            </ul>
-        
-        <h2>Installation</h2>
-        <p>
-        Codetrack is created to be used as a portable app. So no installation is required, just copy the executable and you're good to go.<br/>
-        Preferably try not to copy the file(s) to special folders (like your desktop, network shares, etc.)<br/>
-        </p>        
-        
+
+        <div class="wrapper style2">
+            <h2>How To</h2>
+        </div>
+
 
         <h2>8 Minute overview</h2>
 
+        <p>If you don't want to read the complete how-to's, try out this 8 min overview showing you around:</p>
         <div style="width:60%; display: inline-block;">
-            <p>If you don't want to read the complete how-to's, try out this 8 min overview showing you around:</p>
+
             <div class="videoWrapper">
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/AqGnBzILrFk" frameborder="0" allowfullscreen>
-                    </iframe>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/AqGnBzILrFk" frameborder="0" allowfullscreen>
+                </iframe>
             </div>
         </div>
 
         <br/>
         <br/>
-       
-               
-        <h2>How to</h2>
+
+        <h2>General</h2>
         <ul>
-            <li><a href="howto_profileprocess.html" onclick="trackOutboundLink('howto_profileprocess.html',false); return false;"><h1>Profile an executable</h1></a></li>
-            <li><a href="howto_profilewinsvc.html" onclick="trackOutboundLink('howto_profilewinsvc.html',false); return false;"><h1>Profile a Windows Service</h1></a></li>
-            <li><a href="howto_profileiis.html" onclick="trackOutboundLink('howto_profileiis.html',false); return false;"><h1>Profile IIS</h1></a></li>
-            <li><a href="howto_profileiisexpress.html" onclick="trackOutboundLink('howto_profileiisexpress.html',false); return false;"><h1>Profile IIS Express</h1></a></li>
-            <li><a href="howto_profilecore.html" onclick="trackOutboundLink('howto_profilecore.html',false); return false;"><h1>Profile .NET Core</h1></a></li>
-            <li><a href="howto_profileattachprocess.html" onclick="trackOutboundLink('howto_profileattachprocess.html',false); return false;"><h1>Attach to a running process</h1></a></li>
-            <br/>
-            <li><a href="howto_analyze.html" onclick="trackOutboundLink('howto_analyze.html',false); return false;"><h1><b>Analyzing your profiling session</b></h1></a></li>
-			<li><a href="howto_rescope.html" onclick="trackOutboundLink('howto_rescope.html',false); return false;"><h1>Rescoping your data</h1></a></li>
-            <li><a href="howto_writeplugin.html" onclick="trackOutboundLink('howto_writeplugin.html',false); return false;"><h1><b>Writing your own plugins</b></h1></a></li>
+            <li>
+                <a href="https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/2016/10/04/why-would-i-use-codetrack/',false); return false;">
+                    <h1>Why should you use codetrack ?</h1>
+                </a>
+            </li>
+            <li>
+                <a href="https://wordpress.com/read/feeds/53780037/posts/1354177350" onclick="trackOutboundLink('https://wordpress.com/read/feeds/53780037/posts/1354177350',false); return false;">
+                    <h1>The rocket tale (part I): Sampling vs Tracing</h1>
+                </a>
+            </li>
+            <li>
+                <a href="profilingmodes.html" onclick="trackOutboundLink('profilingmodes.html',false); return false;">
+                    <h1>Profiling modes</h1>
+                </a>
+            </li>
+            <li>
+                <a href="rulesets.html" onclick="trackOutboundLink('rulesets.html',false); return false;">
+                    <h1>Deeptrace Rulesets</h1>
+                </a>
+            </li>
+            <li>
+                <a href="virtualtimeline.html" onclick="trackOutboundLink('virtualtimeline.html',false); return false;">
+                    <h1>Virtual timelines explained</h1>
+                </a>
+            </li>
         </ul>
+
+        <h2>Installation</h2>
+        <p>
+            Codetrack is created to be used as a portable app. So no installation is required, just copy the executable and you're good
+            to go.
+            <br/> Preferably try not to copy the file(s) to special folders (like your desktop, network shares, etc.)
+            <br/>
+        </p>
+
+        <h2>Collecting data</h2>
+        <ul>
+            <li>
+                <a href="howto_profileprocess.html" onclick="trackOutboundLink('howto_profileprocess.html',false); return false;">
+                    <h1>Profile an executable</h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_profilewinsvc.html" onclick="trackOutboundLink('howto_profilewinsvc.html',false); return false;">
+                    <h1>Profile a Windows Service</h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_profileiis.html" onclick="trackOutboundLink('howto_profileiis.html',false); return false;">
+                    <h1>Profile IIS</h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_profileiisexpress.html" onclick="trackOutboundLink('howto_profileiisexpress.html',false); return false;">
+                    <h1>Profile IIS Express</h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_profilecore.html" onclick="trackOutboundLink('howto_profilecore.html',false); return false;">
+                    <h1>Profile .NET Core</h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_profileattachprocess.html" onclick="trackOutboundLink('howto_profileattachprocess.html',false); return false;">
+                    <h1>Attach to a running process</h1>
+                </a>
+            </li>
+            <br/>
+
+            <h2>Analyzing</h2>
+
+            <li>
+                <a href="howto_analyze.html" onclick="trackOutboundLink('howto_analyze.html',false); return false;">
+                    <h1>
+                        <b>Analyzing your profiling session</b>
+                    </h1>
+                </a>
+            </li>
+            <li>
+                <a href="howto_rescope.html" onclick="trackOutboundLink('howto_rescope.html',false); return false;">
+                    <h1>Rescoping your data</h1>
+                </a>
+            </li>
+
+            <br/>
+            <h2>Extending</h2>
+            <li>
+                <a href="howto_writeplugin.html" onclick="trackOutboundLink('howto_writeplugin.html',false); return false;">
+                    <h1>
+                        <b>Writing your own plugins</b>
+                    </h1>
+                </a>
+            </li>
+        </ul>
+
+
+
+
     </div>
+
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-83912260-1', 'auto');
-  ga('send', 'pageview');
+        ga('create', 'UA-83912260-1', 'auto');
+        ga('send', 'pageview');
 
-</script>
-<script>
-/**
-* Functie die klikken op een uitgaande link in Analytics bijhoudt.
-* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
-* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
-* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
-*/
-var trackOutboundLink = function(url, external) {
-   if (external)
-   {
-	ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){ window.open(url, '_blank'); }
-      });
-   }
-   else
-   {
-   	ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-      });
-   }
-   
-} 
-</script>
+    </script>
+    <script>
+        /**
+        * Functie die klikken op een uitgaande link in Analytics bijhoudt.
+        * Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
+        * als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
+        * bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
+        */
+        var trackOutboundLink = function (url, external) {
+            if (external) {
+                ga('send', 'event', 'outbound', 'click', url, {
+                    'transport': 'beacon',
+                    'hitCallback': function () { window.open(url, '_blank'); }
+                });
+            }
+            else {
+                ga('send', 'event', 'outbound', 'click', url, {
+                    'transport': 'beacon',
+                    'hitCallback': function () { document.location = url; }
+                });
+            }
+
+        } 
+    </script>
 </body>
-
-

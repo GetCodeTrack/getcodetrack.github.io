@@ -1,74 +1,175 @@
 <html>
-    <head>
-        <title>CodeTrack</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
-        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/skel.min.js"></script>
-        <script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-        <script src="js/mine.js"></script>
-        <noscript>
-            <link rel="stylesheet" href="css/skel.css" />
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-xlarge.css" />
-        </noscript>
-    </head>
-    <body id="top">
-        <div style="width: 60%; height: 80%; margin: auto;display: block">
-           <h2>writing your own plugins</h2>
-    
-            <p>
-            CodeTrack has its own plugin system which allows you to extend it the way you want. Your plugins can also be shared with others.
-            <br/>
-            Plugins are usually based on one or more Deeptrace method rulesets, so please make sure you read about rulesets first: <a href="rulesets.html">DeepTrace method rulesets</a>
-            <br/>
-           
-            <ul>
-                Here you can find some info on creating
-                <li><b>Viewplugins :</b> giving you the possibility to visualize your traced data any way you want.</li>
-                <li><b>Valueplugins :</b> these allow you to represent argument values in a custom way.</li>
-            </ul> 
-            </p>
-    
-            <p>
-                <ol>
-                    <li>Go to the sample github page (<a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin"  onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin',false); return false;">My Plugin github</a>).</li>   
-                    <li>Download the sample</li> 
-                    <li>In the project properties, rename "MyPlugin.Plugins" to whatever you like (just make sure the assembly ends with .plugins.dll for codetrack to find
-                         and load your plugin</li>
-                    <li>Choose a namespace of your liking</li>
-                    <li>Replace all 'MyPlugin' string with the name you choose eralier</li>
-                    <li>Replace all 'MyNamespace' string with the namespace you choose eralier</li>
-                    <li>In MyPlugin.cs, make sure to <b>replace the guid</b> with a new one. This is necessary to uniquely identify your plugin (especially if you want to share it later)</li>
-                    <li>Now build the project (make sure to restore the nuget packages)</li>
-                    <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version in %localappdata%/codetrack/ (both work equally fine)
-                    <br/><b>Note that your file should end with <i>.plugins.dll</i> for codetrack to consider it a plugin assembly!</b>
-                    </li>
 
-                    </li>
-                    <li>Start Codetrack and go to the settings page and select 'plugins', now you should see your plugin.</li>
-                    <li>If you open a trace and go to the timeline view, your plugin should be listed with the 2 default plugins. If all goes well you should see a clickable button</li>
-                </ol>
+<head>
+    <title>CodeTrack</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/mine.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+</head>
 
-            </p>
-            
-            <br/>
-            <p>Congratulations, you now have a hello world plugin!
-                <br/>Of course that's not so usefull yet. To get some inspiration, the two plugins that are provided with 
-                CodeTrack by default, are also available in Github : <a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins" onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins',false); return false;">CodeTrack.Plugins on github</a>
-            </p>
+<body id="top">
+    <div style="width: 60%; height: 80%; margin: auto;display: block">
 
-            <h1>
-               Sit tight, more detailed info on building plugins will follow soon !
-            </h1>
-    
-
-        
+        <div class="wrapper style2">
+            <h2>writing your own plugins</h2>
         </div>
-    </body>
-    
-    
-    
+
+        <p>
+            CodeTrack has its own plugin system which allows you to extend it the way you want. Your plugins can also be shared with
+            others.
+            <br/> Plugins are usually based on one or more Deeptrace method rulesets, so please make sure you read about rulesets
+            first:
+            <a href="rulesets.html">DeepTrace method rulesets</a>
+            <br/>
+
+            <ul>
+                There are 2 main categories of plugins:
+                <li>
+                    <b>Viewplugins :</b> giving you the possibility to visualize your traced data any way you want.</li>
+                <li>
+                    <b>Valueplugins :</b> these allow you to represent argument and return values in a custom way.</li>
+
+
+                Note that you can combine one or more of any of these 2 type of plugins in the same assembly. In this documentation however,
+                there's just one type per assembly to keep things simple and clear.
+            </ul>
+
+
+
+            <ul>
+                <li>
+                    <a href="#CreateViewPlugin">Creating a viewplugin</a>
+                </li>
+                <li>
+                    <a href="#CreateValuePlugin">Creating a valueplugin</a>
+                </li>
+                <li>
+                    <a href="#EmbeddingRulesets">Embedding rulesets</a>
+                </li>
+
+            </ul>
+        </p>
+
+        <a name="CreateViewPlugin"></a>
+        <h4>Creating a viewplugin</h4>
+        <p>
+            <ol>
+                <li>Go to the sample github page (
+                    <a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin" onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/MyPlugin',false); return false;">My Plugin github</a>).</li>
+                <li>Download the sample</li>
+                <li>In the project properties, rename "MyPlugin.Plugins" to whatever you like (
+                    <b>just make sure the assembly ends with .plugins.dll for codetrack to find and load your plugin</b>
+                </li>
+                <li>Choose a namespace of your liking</li>
+                <li>Replace all 'MyPlugin' strings with the name you choose earlier</li>
+                <li>Replace all 'MyNamespace' strings with the namespace you choose earlier</li>
+                <li>In MyPlugin.cs, make sure to
+                    <b>replace the guid</b> with a new one. This is necessary to uniquely identify your plugin (especially if
+                    you want to share it later)</li>
+                <li>Now build the project (make sure to restore the nuget packages)</li>
+                <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version
+                    in %localappdata%/codetrack/ (both work equally fine)
+                    <br/>
+                    <b>Note that your file should end with
+                        <i>.plugins.dll</i> for codetrack to consider it a plugin assembly!</b>
+                </li>
+                <li>Start Codetrack and go to the settings page and select 'plugins', now you should see your plugin.</li>
+                <li>If you open a trace and go to the timeline view, your plugin should be listed with the 2 default plugins.
+                    If all goes well you should see a clickable button</li>
+            </ol>
+
+        </p>
+
+        <p>Congratulations, you now have a hello world plugin!
+            <br/>Of course that's not so useful just yet. To get some inspiration, the two plugins that are provided with CodeTrack
+            by default, are also available in Github :
+            <a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins" onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/CodeTrack.Plugins',false); return false;">CodeTrack.Plugins on github</a>
+        </p>
+
+
+        <br/>
+        <a name="CreateValuePlugin"></a>
+        <h4>Creating a valueplugin</h4>
+        <p>
+            <ol>
+                <li>Go to the sample github page (
+                    <a href="https://github.com/GetCodeTrack/PluginSamples/tree/master/MyValuePlugin" onclick="trackOutboundLink('https://github.com/GetCodeTrack/PluginSamples/tree/master/MyValuePlugin',false); return false;">My ValuePlugin github</a>).</li>
+                <li>Download the sample.</li>
+                <li>In the project properties, rename "MyPlugin.Plugins" to whatever you like (
+                    <b>just make sure the assembly ends with .plugins.dll for codetrack to find and load your plugin</b>
+                </li>
+                <li>Choose a namespace of your liking</li>
+                <li>Replace all 'MyPlugin' strings with the name you choose earlier</li>
+                <li>Replace all 'MyNamespace' strings with the namespace you choose earlier</li>
+                <li>In MyPlugin.cs, make sure to
+                    <b>replace the guid</b> with a new one. This is necessary to uniquely identify your plugin (especially if
+                    you want to share it later)</li>
+                <li>Now build the project (make sure to restore the nuget packages)</li>
+                <li>Now you should have a xyz.plugins.dll that you can place next to codetrack.exe or under the right version
+                    in %localappdata%/codetrack/ (both work equally fine)
+                    <br/>
+                    <b>Note that your file should end with
+                        <i>.plugins.dll</i> for codetrack to consider it a plugin assembly!</b>
+                </li>
+
+                <li>The assembly you just built should already be useable: it contains just a simple valueplugin that replaces
+                    values of type System.Uri by their string representation.
+                    <br/>You probably want to implement something more exciting than this, so after testing the default behavior
+                    you can just continue with the next steps to replace this with your own.
+                </li>
+
+                <li>If your plugin requires one or more specific rulesets, you can embed them in your plugin assembly (see:
+                    <a href="#">Embedding rulesets</a>)
+                    <br/>If you don't want any rulesets, make sure to delete the sample .json file under the rulesets folder</li>
+                <li>Now you are ready to start implementing the real functionality of your valueplugin: You can do this by replacing
+                    the content of the CanConvert() and Convert() methods of your plugin.</li>
+
+                <li>Start Codetrack and go to the settings page and select 'plugins', now you should see your plugin.</li>
+                <li>If you open a trace which had methods traced that matched your ruleset, the arguments matching your value
+                    plugin should now be presented the way you specified.
+                    <br/>You can check this in the properties of a call or in the generic plugin.</li>
+            </ol>
+
+        </p>
+
+        <br/>
+
+        <a name="EmbeddingRulesets"></a>
+        <h4>Embedding rulesets</h4>
+        <p>
+            By embedding one or more rulesets, you can make sure that users can easily take a trace with the info that your plugin needs.
+            All embedded rulesets in plugin assemblies will autmatically be included in the ruleset library. To add a ruleset
+            just follow these simple steps:
+            <ol>
+                <li>Create the ruleset you want by starting CodeTrack and configuring a new rulest in the deeptrace library (you
+                    can find this under the setitngs tab). For More info on doing this check
+                    <a href="rulesets.html#Create">Creating RuleSets</a>
+                </li>
+                <li>Once you are happy with the ruleset (tip: test it first, by taking a trace and see if the trace contains
+                    the info you expect), you can click on the copy link in the upper right corner of the library.
+                </li>
+                <li>Now go to your plugin project and add a json file. You can name it whatever you want, as long as it ends
+                    with '.ruleset.json'.</li>
+                <li>In that file you can now paste the content of your clipboard (this should be the json containing your ruleset).</li>
+                <li>Make sure you set all 'IsReadOnly' fields to true (this way users won't be able to change your ruleset).</li>
+                <li>Also fill in your information (author and authorcontact) if you really plan on sharing your plugin.</li>
+                <li>Last step is to set the build action of the json file to 'Embedded resource'</li>
+                <li>That's it! Your ruleset(s) should now be added to the library if you restart codetrack after you placed your
+                    assembly next to the codetrack executable.</li>
+            </ol>
+        </p>
+
+
+    </div>
+</body>

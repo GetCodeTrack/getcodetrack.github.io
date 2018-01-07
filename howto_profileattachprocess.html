@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>CodeTrack</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -16,60 +17,66 @@
         <link rel="stylesheet" href="css/style-xlarge.css" />
     </noscript>
 </head>
+
 <body id="top">
     <div style="width: 60%; height: 80%; margin: auto;display: block">
-       <h2>Attach to a running process</h2>
 
-<p>
-This can be used to profile a .NET process that's already running. (This is only available for .NET 4.0 and up)
-</p>
+        <div class="wrapper style2">
+            <h2>Attach to a running process</h2>
+        </div>
 
-<p>
-Bear in mind that if your process needs to be elevated you need to run the profiler elevated as well (you can do this by clicking on the elevation icon icon the title bar, or run the profiler as admin).
-</p>
+        <p>
+            This can be used to profile a .NET process that's already running. (This is only available for .NET 4.0 and up)
+        </p>
 
-<ol>
-<li>Select the collect tab (on the left of the application)
-</li>
-<li>Select ‘Running Process’ and click the arrow on the right to go to the next step.<br/>
-<br/>
-<image src="./images/howto/runningprocess01.png">
-</br>
-</li>
+        <p>
+            Bear in mind that if your process needs to be elevated you need to run the profiler elevated as well (you can do this by
+            clicking on the elevation icon icon the title bar, or run the profiler as admin).
+        </p>
 
-<li><p>Select the process you want to profile.<br/>
-If you don't see your process, try clicking the refresh button. If you still don't see it make sure it is .NET4.0 or up AND you are elevated if necessary.
-</p>
-<br/>
-<br/>
-<image src="./images/howto/runningprocess02.png">
-</br>Now we are ready for the last step, click on the right arrow to continue.
-</br>
-</br>
-</li>
+        <ol>
+            <li>Select the collect tab (on the left of the application)
+            </li>
+            <li>Select ‘Running Process’ and click the arrow on the right to go to the next step.
+                <br/>
+                <br/>
+                <image src="./images/howto/runningprocess01.png">
+                    </br>
+            </li>
+
+            <li>
+                <p>Select the process you want to profile.
+                    <br/> If you don't see your process, try clicking the refresh button. If you still don't see it make sure
+                    it is .NET4.0 or up AND you are elevated if necessary.
+                </p>
+                <br/>
+                <br/>
+                <image src="./images/howto/runningprocess02.png">
+                    </br>Now we are ready for the last step, click on the right arrow to continue.
+                    </br>
+                    </br>
+            </li>
 
 
-<li>
-In this last section you need to select the destination of the profiling data.<br/>
-</br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable the processing of the data.
-This allows you to do the number crunching offline on another machine.
-</br>
-<br/>
-<br/>
-<image src="./images/howto/runningprocess03.png">
-<br/>
-If you want to start profiling immediately, make sure you click the record button, otherwise click the pause button and hit record from the moment
-you want to start capturing data.<br/>
-Now you are ready to start profiling. If you click the play button, thr profiler will attach to your process. 
-<br/>
-If you press the stop button Codetrack will detach from your process.
-You can also just end the process from your own application if desired.
-</br>
-</li>
+            <li>
+                In this last section you need to select the destination of the profiling data.
+                <br/>
+                </br>If you need to profile on a very slow machine,one with little RAM, or a production server, you can disable
+                the processing of the data. This allows you to do the number crunching offline on another machine.
+                </br>
+                <br/>
+                <br/>
+                <image src="./images/howto/runningprocess03.png">
+                    <br/> If you want to start profiling immediately, make sure you click the record button, otherwise click the
+                    pause button and hit record from the moment you want to start capturing data.
+                    <br/> Now you are ready to start profiling. If you click the play button, thr profiler will attach to your
+                    process.
+                    <br/> If you press the stop button Codetrack will detach from your process. You can also just end the process
+                    from your own application if desired.
+                    </br>
+            </li>
 
-</ol>
-    
+        </ol>
+
     </div>
 </body>
-
-

@@ -1,137 +1,155 @@
 <html>
+
 <head>
-    <title>CodeTrack</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
-    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-layers.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/mine.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="css/skel.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/style-xlarge.css" />
-    </noscript>
+	<title>CodeTrack</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="Codetrack Profiling .NET performance c# vb.net" />
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/mine.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</noscript>
 </head>
+
 <body id="top">
-    <div style="width: 60%; height: 80%; margin: auto;display: block">
-       <h2>Virtual timeline</h2>
+	<div style="width: 60%; height: 80%; margin: auto;display: block">
 
-<p>
-When you don't select Deeptrace rulesets, CodeTrack will still provide a timeline in the output.
-The difference is that this is a virtual timeline. It is constructed based on the sampled stacks.<br/>
-You can recognize the virtual timeline by the orange color scheme and by the warning in the top right corner.
-It is important to know that a timeline is virtual because it has a few consequences you need to take in account when analyzing your data.
-<br>
-<image src="./images/howto/virtual_timeline.png" width="120%"/>
-</p>
+		<div class="wrapper style2">
+			<h2>Virtual timeline</h2>
+		</div>
 
-<h2>How it works</h2>
-
-<p>
-There is a slight but important difference between tracing and sampling mode, so I'll explain them seperately.
-<ul>
-	<li>
-		<h2>Sampling</h2><br/>
 		<p>
-			Sampling means that the profiler will periodically freeze all managed threads and during each freeze a stack snapshot is taken for each thread and stored with a timestamp.
-			<br/>
-			When constructing the timeline, the only thing we know for sure is which methods were active at the moment of the snapshot. All of these snapshots are put next to each other and if a method is the same as in the previous snapshot, it is glued to the previous one.
-			<br/>
-			This has some important consequences you need to keep in mind while looking at your virtual timeline:
-			<ul>
-				<li>It might very well be that in realtity a method's duration was much shorter</li>
-				<li>Glued samples might be incorrect, so a method spanning more than one sample might in reality be alternated by other methods</li>
-				<li>A single method might in reality be more than one, in other words: the method count might be incorrect.</li>
-				<li>Probably a lot of method calls are missing</li>
-			</ul>
-			The moment at which a snapshot is taken, is marked at the top of every thread by means of a little green tick. If you zoom in really hard you can even see the suspension induced by freezing the thread:
-			<br/>
-			<image src="./images/howto/virtual_timeline_ticks_sampling.png" />
+			When you don't select Deeptrace rulesets, CodeTrack will still provide a timeline in the output. The difference is that this
+			is a virtual timeline. It is constructed based on the sampled stacks.
+			<br/> You can recognize the virtual timeline by the orange color scheme and by the warning in the top right corner. It is important
+			to know that a timeline is virtual because it has a few consequences you need to take in account when analyzing your data.
+			<br>
+			<image src="./images/howto/virtual_timeline.png" width="120%" />
 		</p>
-	</li>
-	<br/>
-	<li>
-		<h2>Tracing</h2><br/>
+
+		<h2>How it works</h2>
+
 		<p>
-			Tracing works similar compared to sampling, but every time a method starts or ends, the count is updated and the duration is stored.
-			Every time a method event occurs and 100ms has passed, a snapshot is stored with a timestamp. As a consequence, this snapshot contains all methods called during this timeframe, their count and their total duration.
-			<br/>
-			While more accurate than sampling, this still has some important consequences you need to keep in mind while looking at your virtual timeline:
+			There is a slight but important difference between tracing and sampling mode, so I'll explain them seperately.
 			<ul>
-				<li>The duration of a method is correct, but the count is not (for simplicity, multiple calls are grouped together into 1). However the real call count is displayed on each virtual block.</li>
-				<li>The position is not exact: the method(s) definitely occured during the 100 ms sample range, but we don't know the exact position or the order in which they occured.</li>
-				<li>If a method is started but not ended in a particular snapshot, it is automatically glued to the next one. In this case this is correct.</li>
-				<li>No method calls are missing (although in the timeline some of them might be grouped into 1 block)</li>
+				<li>
+					<h2>Sampling</h2>
+					<br/>
+					<p>
+						Sampling means that the profiler will periodically freeze all managed threads and during each freeze a stack snapshot is
+						taken for each thread and stored with a timestamp.
+						<br/> When constructing the timeline, the only thing we know for sure is which methods were active at the moment of the
+						snapshot. All of these snapshots are put next to each other and if a method is the same as in the previous snapshot,
+						it is glued to the previous one.
+						<br/> This has some important consequences you need to keep in mind while looking at your virtual timeline:
+						<ul>
+							<li>It might very well be that in realtity a method's duration was much shorter</li>
+							<li>Glued samples might be incorrect, so a method spanning more than one sample might in reality be alternated by other
+								methods</li>
+							<li>A single method might in reality be more than one, in other words: the method count might be incorrect.</li>
+							<li>Probably a lot of method calls are missing</li>
+						</ul>
+						The moment at which a snapshot is taken, is marked at the top of every thread by means of a little green tick. If you zoom
+						in really hard you can even see the suspension induced by freezing the thread:
+						<br/>
+						<image src="./images/howto/virtual_timeline_ticks_sampling.png" />
+					</p>
+				</li>
+				<br/>
+				<li>
+					<h2>Tracing</h2>
+					<br/>
+					<p>
+						Tracing works similar compared to sampling, but every time a method starts or ends, the count is updated and the duration
+						is stored. Every time a method event occurs and 100ms has passed, a snapshot is stored with a timestamp. As a consequence,
+						this snapshot contains all methods called during this timeframe, their count and their total duration.
+						<br/> While more accurate than sampling, this still has some important consequences you need to keep in mind while looking
+						at your virtual timeline:
+						<ul>
+							<li>The duration of a method is correct, but the count is not (for simplicity, multiple calls are grouped together into
+								1). However the real call count is displayed on each virtual block.</li>
+							<li>The position is not exact: the method(s) definitely occured during the 100 ms sample range, but we don't know the
+								exact position or the order in which they occured.</li>
+							<li>If a method is started but not ended in a particular snapshot, it is automatically glued to the next one. In this
+								case this is correct.</li>
+							<li>No method calls are missing (although in the timeline some of them might be grouped into 1 block)</li>
+						</ul>
+
+						The moment at which a snapshot is taken, is marked at the top of every thread by means of a little green tick. This gives
+						you an idea of the exact timeframe in which the presented method calls occur (even though their position is not exact,
+						we know for sure they occur between the green ticks):
+						<br/>
+						<image src="./images/howto/virtual_timeline_ticks.png" />
+					</p>
+				</li>
+				<li>
+					<h2>Mixed mode with DeepTrace</h2>
+					<br/>
+					<p>
+						As you can read in
+						<a href="profilingmodes.html">Profiling modes</a>, it is possible to combine Deeptrace mode with regular tracing. In that case, the resulting timeline
+						will contain virtual items (tracing) combined with real items (Deeptracing) of which the exact start and stop time
+						is known.
+					</p>
+				</li>
 			</ul>
-
-			The moment at which a snapshot is taken, is marked at the top of every thread by means of a little green tick. This gives you an idea of the exact timeframe in which the presented method calls occur (even though their position is not exact, we know for sure they occure between the green ticks):
-			<br/>
-			<image src="./images/howto/virtual_timeline_ticks.png" />
 		</p>
-	</li>
-	<li>
-			<h2>Mixed mode with DeepTrace</h2><br/>
-			<p>
-				As you can read in <a href="profilingmodes.html">Profiling modes</a>, it is possible to combine Deeptrace mode with regular tracing. In that case, the resulting 
-				timeline will contain virtual items (tracing) combined with real items (Deeptracing) of which the exact start and stop time is known.
-			</p>
-		</li>
-</ul>
-</p>
-<br/>
-<h2>What's the use ?</h2>
-<p>If the virtual timeline is not exact, then why is it provided anyway?<br/>
-First of all, it gives you an idea of what is going on during the lifetime of your application. Next to giving you information about the total performance of your method calls, 
-you can now also get a rough idea about the chronological order and also see if at particular moments in time methods tend to take longer.
-<br/>
-Another, more important, reason is that this virtual timeline facilitates the rescope feature (more info <a href="howto_rescope.html">here</a>).
-Based on the virtual timeline you can specify ranges to rescope all the other views, so you can for instance compare 2 separate moments in time.
-</p>
+		<br/>
+		<h2>What's the use ?</h2>
+		<p>If the virtual timeline is not exact, then why is it provided anyway?
+			<br/> First of all, it gives you an idea of what is going on during the lifetime of your application. Next to giving you information
+			about the total performance of your method calls, you can now also get a rough idea about the chronological order and
+			also see if at particular moments in time methods tend to take longer.
+			<br/> Another, more important, reason is that this virtual timeline facilitates the rescope feature (more info
+			<a href="howto_rescope.html">here</a>). Based on the virtual timeline you can specify ranges to rescope all the other views, so you can for instance
+			compare 2 separate moments in time.
+		</p>
 
 
 
-    </div>
-	
-	
-	    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	</div>
 
-  ga('create', 'UA-83912260-1', 'auto');
-  ga('send', 'pageview');
 
-</script>
-<script>
-/**
-* Functie die klikken op een uitgaande link in Analytics bijhoudt.
-* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
-* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
-* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
-*/
-var trackOutboundLink = function(url, external) {
-   if (external)
-   {
-	ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){ window.open(url, '_blank'); }
-      });
-   }
-   else
-   {
-   	ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-      });
-   }
-   
-} 
-</script>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-83912260-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+	<script>
+		/**
+		* Functie die klikken op een uitgaande link in Analytics bijhoudt.
+		* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
+		* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
+		* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
+		*/
+		var trackOutboundLink = function (url, external) {
+			if (external) {
+				ga('send', 'event', 'outbound', 'click', url, {
+					'transport': 'beacon',
+					'hitCallback': function () { window.open(url, '_blank'); }
+				});
+			}
+			else {
+				ga('send', 'event', 'outbound', 'click', url, {
+					'transport': 'beacon',
+					'hitCallback': function () { document.location = url; }
+				});
+			}
+
+		} 
+	</script>
 </body>
-
-
