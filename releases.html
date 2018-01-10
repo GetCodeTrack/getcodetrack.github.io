@@ -5,416 +5,555 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
 
-		<title>CodeTrack - Releases</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="Codetrack Profiling Profiler Profile tracing tracking code track dotnet .NET performance c# vb f# IIS express asp wpf winforms" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+<head>
 
-		
-	</head>
-	<body id="top">
-			<section id="banner" class="wrapper style2">
-				<div class="inner">
-						
-					<h2><image src="images/logo_rocket.png" height="170px" style="text-align:center;vertical-align:middle;margin:30px"/>CodeTrack: Releases</h2>
-	
-					<pCenter>
-						Creating CodeTrack is a challenging task and uses up quite a lot of my spare (and family) time. If you like to support me, you can do so by making a donation. 
-						<br/>
-					</pCenter>
+	<title>CodeTrack - Releases</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="Codetrack Profiling Profiler Profile tracing tracking code track dotnet .NET performance c# vb f# IIS express asp wpf winforms"
+	/>
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 
-					<ul class="actions" style="margin:10px">
-						<li><a href="#latest" target="_blank" class="button big special">Latest</a></li>
-						<li><a href="http://www.getcodetrack.com/donatepage.html" target="_blank" onclick="trackOutboundLink('http://www.getcodetrack.com/donatepage.html'); return false;" target="_blank" class="big special button alt">Donate</a></li>
-						<li><a href="contact.html" target="_blank" class="big button alt" >Contact me</a></li>
-					</ul>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</noscript>
 
-					  <pCenter>
-                        By downloading this product you agree to the <a href="license.html" target="_blank">EULA</a>
-                    </pCenter>
-				</div>
-			</section>
 
-			<section id="releases" class="wrapper style1">
-				<header class="major">
-				
-					<pCenter>Although I do my very best, sometimes I break stuff. That's why you can also get previous versions in case of an issue.
-					<br/><b>
-					If you like CodeTrack, spread the word (a tweet, like or share goes a long way). If you have a problem, please let me know so I can fix it. 
-					</b>
-					<br/>
-					</pCenter>
-					<br/>
-					<h1>
-						<pCenter>
-							Make sure to follow CodeTrack so you get notified of new releases !
+</head>
+
+<body id="top">
+	<section id="banner" class="wrapper style2">
+		<div class="inner">
+
+			<h2>
+				<image src="images/logo_rocket.png" height="170px" style="text-align:center;vertical-align:middle;margin:30px" />CodeTrack: Releases</h2>
+
+			<pCenter>
+				Creating CodeTrack is a challenging task and uses up quite a lot of my spare (and family) time. If you like to support me,
+				you can do so by making a donation.
+				<br/>
+			</pCenter>
+
+			<ul class="actions" style="margin:10px">
+				<li>
+					<a href="#latest" target="_blank" class="button big special">Latest</a>
+				</li>
+				<li>
+					<a href="http://www.getcodetrack.com/donatepage.html" target="_blank" onclick="trackOutboundLink('http://www.getcodetrack.com/donatepage.html'); return false;"
+					 target="_blank" class="big special button alt">Donate</a>
+				</li>
+				<li>
+					<a href="contact.html" target="_blank" class="big button alt">Contact me</a>
+				</li>
+			</ul>
+
+			<pCenter>
+				By downloading this product you agree to the
+				<a href="license.html" target="_blank">EULA</a>
+			</pCenter>
+		</div>
+	</section>
+
+	<section id="releases" class="wrapper style1">
+		<header class="major">
+
+			<pCenter>Although I do my very best, sometimes I break stuff. That's why you can also get previous versions in case of an issue.
+				<br/>
+				<b>
+					If you like CodeTrack, spread the word (a tweet, like or share goes a long way). If you have a problem, please let me know
+					so I can fix it.
+				</b>
+				<br/>
+			</pCenter>
+			<br/>
+			<h1>
+				<pCenter>
+					Make sure to follow CodeTrack so you get notified of new releases !
+				</pCenter>
+			</h1>
+			<ul class="icons">
+				<li>
+					<a href="https://twitter.com/codetrack4net" onclick="trackOutboundLink('https://twitter.com/codetrack4net'); return false;"
+					 class="icon fa-twitter">
+						<span class="label">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/codetrackdotnet" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet'); return false;"
+					 class="icon fa-facebook">
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;"
+					 class="icon fa-rss">
+						<span class="label">Blog</span>
+					</a>
+				</li>
+			</ul>
+
+		</header>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<a name="latest"></a>
+						<h2>V1.0.3.3</h2>
+						<h1>(10-01-2018)</h1>
+						<ul>
+							<li>[Improvement]
+								<b>Bugfix for crashing process while tracing (also fixes some &lt;UNKNOWN&gt; types)</b>
+							</li>
+							<li>[Improvement]
+								<b>Bugfix for crash when tracing IISExpress</b>
+							</li>
+							<li>[Improvement]
+								<b>Bugfix for crash when tracing child processes</b>
+							</li>
+							<li>[Improvement]
+								Not using IISExpressTray.exe to start IISExpress
+							</li>
+							<li>[Improvement]
+								Attach To Process: Listbox for processes + made refresh async
+							</li>
+							<li>[Improvement]
+									Fix for 'Only part of a ReadProcessMemory or WriteProcessMemory request was completed' exception
+							</li>
+
+						</ul>
+
+						<a href="releases/codetrack_1_0_3_3.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_3_3.zip'); return false;">Download</a>
+						<h6>
+							<br/>SHA256: 455eccfcc568004bf6108ba9ad8dbbc32cdecb84c6c62153c8f181ca984d68ce</h6>
+
+						<pCenter style="margin-left: 20px;color:darkred">
+							<br/>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.
+							<br/>Usually using this version (not merged into 1 single file) helps:
+							<br/>
+
+							<a href="releases/codetrack_1_0_3_3_multi.zip" class="button special" onclick="trackOutboundLink('releases/codetrack_1_0_3_3_multi.zip'); return false;">Download (unmerged)</a>
+							<h6>
+								<br/>SHA256: 5dddd55b39773ef144bcf2b19f1eb20cfd2ae825e27e9c8a84c956a30a0bed98</h6>
+
+							<br/>If that doesn't help I can probably help you out, drop me a mail at
+							<script type="text/javascript">
+								document.write("<a href=\"mailto");
+								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>");
+
+							</script>.
+							<br/>Thanks for your understanding!</b>
 						</pCenter>
-					</h1>
-					<ul class="icons">
-								<li><a href="https://twitter.com/codetrack4net" onclick="trackOutboundLink('https://twitter.com/codetrack4net'); return false;" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.facebook.com/codetrackdotnet" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet'); return false;" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;" class="icon fa-rss"><span class="label">Blog</span></a></li>
+					</section>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.3.2</h2>
+						<h1>(12-12-2017)</h1>
+						<ul>
+
+							<li>[New]
+								<b>Support for pdbs (show sourcecode)</b>
+							</li>
+							<li>[New]
+								<b>Mixed mode (Trace & DeepTrace)</b>
+							</li>
+							<li>[New]
+								<b>Trace native calls ([DllImport])</b>
+							</li>
+							<li>[New] Trace all child calls</li>
+							<li>[New] Trace derived classes</li>
+							<li>[New] Trace filter supports full method name with arguments</li>
+							<li>[New] New trace filter operators</li>
+							<li>[New]
+								<b>Support for enums and flags</b>
+							</li>
+							<li>[New] Import/Export trace filters</li>
+							<li>[New] User Settings</li>
+							<li>[New] Crash and info logging</li>
+							<li>[New] Assembly picker for filters and rule sets</li>
+							<li>[New]
+								<b>DeepTrace</b>
+							</li>
+							<ul>
+								<li>Deeptrace rulesets</li>
+								<li>Delve fields</li>
+								<li>DeepTrace Library</li>
+								<li>Import/Export library</li>
 							</ul>
 
-				</header>
+							<li>[New]
+								<b>Plugins</b>
+							</li>
+							<ul>
+								<li>Create your own plugins</li>
+								<li>Console output plugin</li>
+								<li>Generic plugin</li>
+								<li>Timespan plugin</li>
+								<li>DateTime plugin</li>
+							</ul>
 
-				<div class="container">
-						<div class="row" >
-							<div class="12u" >
-							<section class="special box" >
-							<a name="latest"></a>
-								<h2>V1.0.3.2</h2>
-								<h1>(12-12-2017)</h1>
-								<ul>
-									
-									<li>[New] <b>Support for pdbs (show sourcecode)</b></li>
-									<li>[New] <b>Mixed mode (Trace & DeepTrace)</b></li>
-									<li>[New] <b>Trace native calls ([DllImport])</b></li>
-									<li>[New] Trace all child calls</li>
-									<li>[New] Trace derived classes</li>
-									<li>[New] Trace filter supports full method name with arguments</li>
-									<li>[New] New trace filter operators</li>
-									<li>[New] <b>Support for enums and flags</b></li>
-									<li>[New] Import/Export trace filters</li>
-									<li>[New] User Settings</li>
-									<li>[New] Crash and info logging</li>
-									<li>[New] Assembly picker for filters and rule sets</li>
-									<li>[New] <b>DeepTrace</b></li>
-										<ul>
-											<li>Deeptrace rulesets</li>
-											<li>Delve fields</li>
-											<li>DeepTrace Library</li>
-											<li>Import/Export library</li>
-										</ul>
-									
-									<li>[New] <b>Plugins</b></li>
-										<ul>
-											<li>Create your own plugins</li>
-											<li>Console output plugin</li>
-											<li>Generic plugin</li>
-											<li>Timespan plugin</li>
-											<li>DateTime plugin</li>
-										</ul>
-									
-									<li>[New] Virtual call count (tooltip + timeline)</li>
-									<li>[New] <b>Flat list view</b></li>
-									<li>[New] Support for special folders in trace file path</li>
-									<li>[New] Version check for data files</li>
-									<li>[New] <b>Rescope history</b></li>
-									
-									
-									<br/>
-									
-									<li>[Improvement] <b>Replaced unnamed thread id's by readable name</b></li>
-									<li>[Improvement] More marker colors</li>
-									<li>[Improvement] Support for special folders (like '%temp%') in output paths</li>
-									<li>[Improvement] Unlimited results in search box</li>
-									<li>[Improvement] <b>Config in %localappdata%</b></li>
-									<li>[Improvement] Less impact when tracing lots of threads</li>
-									<li>[Improvement] Simplified tracing options</li>
-									<li>[Improvement] UI Perfo improvements</li>
-									<li>[Improvement] Fix for spaces in coreCLR paths</li>
-									<li>[Improvement] Fix for collapsing treeitems</li>
-									<li>[Improvement] Fix for overflowing method count in graph</li>
-									<li>[Improvement] UI improvements</li>
-									<li>[Improvement] Fix for deadlock while tracing</li>
-									<li>[Improvement] Fix for running a trace after cancelling one</li>
-									<li>[Improvement] Flamegraph bugfix</li>
-									<li>[Improvement] Give feedback when unable to move on when collect step is not valid</li>
+							<li>[New] Virtual call count (tooltip + timeline)</li>
+							<li>[New]
+								<b>Flat list view</b>
+							</li>
+							<li>[New] Support for special folders in trace file path</li>
+							<li>[New] Version check for data files</li>
+							<li>[New]
+								<b>Rescope history</b>
+							</li>
 
-								</ul>
-								
-								<a href="releases/codetrack_1_0_3_2.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_3_2.zip'); return false;">Download</a>
-								<h6><br/>SHA256:	76f0892b8c1a181bdd2b818a9afe7482448531eaef514b157b897b2a6c51d7f9</h6>
-								
-								<pCenter style="margin-left: 20px;color:darkred">
-									<br/>
-									<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.
-									<br/>Usually using this version (not merged into 1 single file) helps:<br/> 
 
-									<a href="releases/codetrack_1_0_3_2_multi.zip" class="button special" onclick="trackOutboundLink('releases/codetrack_1_0_3_2_multi.zip'); return false;">Download (unmerged)</a>
-									<h6><br/>SHA256:	7a7b44db3d28d6fd6f9c4f607c9a5f35a766227db77bd2a5adf26715a8cfcfae</h6>
+							<br/>
 
-									<br/>If that doesn't help I can probably help you out, drop me a mail at 
-								<script type="text/javascript">
- 										document.write("<a href=\"mailto");
-        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
-        								
-        </script>.<br/>Thanks for your understanding!</b>
-								</pCenter>							
-							</section>
-						</div>
-					</div>
+							<li>[Improvement]
+								<b>Replaced unnamed thread id's by readable name</b>
+							</li>
+							<li>[Improvement] More marker colors</li>
+							<li>[Improvement] Support for special folders (like '%temp%') in output paths</li>
+							<li>[Improvement] Unlimited results in search box</li>
+							<li>[Improvement]
+								<b>Config in %localappdata%</b>
+							</li>
+							<li>[Improvement] Less impact when tracing lots of threads</li>
+							<li>[Improvement] Simplified tracing options</li>
+							<li>[Improvement] UI Perfo improvements</li>
+							<li>[Improvement] Fix for spaces in coreCLR paths</li>
+							<li>[Improvement] Fix for collapsing treeitems</li>
+							<li>[Improvement] Fix for overflowing method count in graph</li>
+							<li>[Improvement] UI improvements</li>
+							<li>[Improvement] Fix for deadlock while tracing</li>
+							<li>[Improvement] Fix for running a trace after cancelling one</li>
+							<li>[Improvement] Flamegraph bugfix</li>
+							<li>[Improvement] Give feedback when unable to move on when collect step is not valid</li>
+
+						</ul>
+
+						<a href="releases/codetrack_1_0_3_2.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_3_2.zip'); return false;">Download</a>
+						<h6>
+							<br/>SHA256: 76f0892b8c1a181bdd2b818a9afe7482448531eaef514b157b897b2a6c51d7f9</h6>
+
+						<pCenter style="margin-left: 20px;color:darkred">
+							<br/>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.
+							<br/>Usually using this version (not merged into 1 single file) helps:
+							<br/>
+
+							<a href="releases/codetrack_1_0_3_2_multi.zip" class="button special" onclick="trackOutboundLink('releases/codetrack_1_0_3_2_multi.zip'); return false;">Download (unmerged)</a>
+							<h6>
+								<br/>SHA256: 7a7b44db3d28d6fd6f9c4f607c9a5f35a766227db77bd2a5adf26715a8cfcfae</h6>
+
+							<br/>If that doesn't help I can probably help you out, drop me a mail at
+							<script type="text/javascript">
+								document.write("<a href=\"mailto");
+								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>");
+
+							</script>.
+							<br/>Thanks for your understanding!</b>
+						</pCenter>
+					</section>
 				</div>
-				
-				<div class="container">
-						<div class="row" >
-							<div class="12u" >
-							<section class="special box" >
-							<a name="latest"></a>
-								<h2>V1.0.2.0</h2>
-								<h1>(30-05-2017)</h1>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<a name="latest"></a>
+						<h2>V1.0.2.0</h2>
+						<h1>(30-05-2017)</h1>
+						<ul>
+
+							<li>[New]
+								<b>Flamegraphs</b>
+							</li>
+							<li>[New]
+								<b>Open recent traces</b>
+							</li>
+							<li>[New] Manual mode for CoreCLR</li>
+							<li>[New] Information about opened trace</li>
+							<br/>
+
+							<li>[Improvement]
+								<b>Single file deployment</b>
+							</li>
+							<li>[Improvement] Icons per trace type</li>
+							<li>[Improvement] UI fixes</li>
+							<li>[Improvement] Memory usage improvement</li>
+							<li>[Improvement] Perfo fixes (for analyzing sessions with lots of GC or exceptions)</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_2_0.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_2_0.zip'); return false;">Download</a>
+						<h6>
+							<br/>SHA256: ff2977e3a12e59c7eab0fd7e53d38cc13c1c5ddf0c1cc3e4d2328f13e99c8654</h6>
+						<p style="margin-left: 20px;color:darkred">
+							<br/>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.
+							<br/>I can probably help you out with that if you drop me a mail at
+							<script type="text/javascript">
+								document.write("<a href=\"mailto");
+								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>");
+
+							</script>.
+							<br/>Thanks for your understanding!</b>
+						</p>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.1.0</h2>
+						<h1>(20-04-2017)</h1>
+						<ul>
+							<li>[New]
+								<b>Rescope feature</b>
+							</li>
+							<li>[New]
+								<b>Virtual timeline</b>
+							</li>
+							<li>[New]
+								<b>Filter and reorder threads</b>
+							</li>
+							<li>[New]
+								<b>Thread suspensions</b>
+							</li>
+							<li>[New]
+								<b>Graph: heapsizes, CPU, RAM, IO</b>
+							</li>
+							<li>[New]
+								<b>File mappings</b> (when files are missing during offline analysis)</li>
+							<li>[New] Thread headers in timeline</li>
+							<li>[New] Zebra striping for threads</li>
+							<li>[New] Goto thread (burger icon)</li>
+							<li>[New] Collect Advanced: Enable/Disable inlining</li>
+							<li>[New] Collect Advanced: GC info</li>
+							<li>[New] Collect filters : added threadname</li>
+							<li>[New] Properties of items other than call (module, namespace, class,...)</li>
+							<li>[New] Timeline: ticks headers</li>
+							<li>[New] Timeline: draggable markers</li>
+							<li>[New] Timeline: markers for GC, exceptions and sample ticks</li>
+							<li>[New] Code view: Support for VB and IL</li>
+							<br/>
+							<li>[Fix] Elevation fix for .NET 2.0</li>
+							<li>[Fix] IIS: also stop and restart dependent services</li>
+							<li>[Fix] CPU usage while pausing</li>
+							<li>[Fix] Freeze while dragging out window</li>
+							<li>[Fix] Windows services with spaces in the name</li>
+							<li>[Fix] Wrong human readable duration</li>
+							<br/>
+
+							<li>[Improvement] Memory usage improvement</li>
+							<li>[Improvement] Timeline: scroll wheel, now scrolls vertically</li>
+							<li>[Improvement] Try auto locate dotcore</li>
+							<li>[Improvement] Analyze immediately after collect</li>
+							<li>[Improvement] Perfo fixes</li>
+							<li>[Improvement] Select .ctr AND .ctb files by default</li>
+
+						</ul>
+
+						<a href="releases/codetrack_1_0_1_0.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_1_0.zip'); return false;">Download</a>
+
+						<p style="margin-left: 20px;color:darkred">
+							<br/>
+							<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.
+							<br/>I can probably help you out with that if you drop me a mail at
+							<script type="text/javascript">
+								document.write("<a href=\"mailto");
+								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>");
+
+							</script>.
+							<br/>Thanks for your understanding!</b>
+						</p>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.0.7</h2>
+						<h1>(23-02-2017)</h1>
+						<ul>
+
+							<li>[New] Filtering on process name and path (in tracing mode)</li>
+							<li>[New] IISExpress: IISEXpressTray.exe is filtered out by default</li>
+							<li>[New] IISExpress: search for applicationhost.config for iisexpress based on VS solution</li>
+							<li>[New]
+								<b>List view</b>
+							</li>
+							<li>[New] Check for new version on startup</li>
+							<li>[New] Logging in case of issues (create c:\codetracklog folder to enable)</li>
+							<li>[New] Human-readable timestamps</li>
+							<li>[New]
+								<b>Advanced tracing options</b>
 								<ul>
-									
-									<li>[New] <b>Flamegraphs</b></li>
-									<li>[New] <b>Open recent traces</b></li>
-									<li>[New] Manual mode for CoreCLR</li>
-									<li>[New] Information about opened trace</li>
-									<br/>
-									
-									<li>[Improvement] <b>Single file deployment</b></li>
-									<li>[Improvement] Icons per trace type</li>
-									<li>[Improvement] UI fixes</li>
-									<li>[Improvement] Memory usage improvement</li>
-									<li>[Improvement] Perfo fixes (for analyzing sessions with lots of GC or exceptions)</li>
+									<li>Hi precision</li>
+									<li>Thread cycles</li>
+									<li>Overhead compensation</li>
+									<li>Generic resolving</li>
 								</ul>
-								
-								<a href="releases/codetrack_1_0_2_0.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_2_0.zip'); return false;">Download</a>
-								<h6><br/>SHA256:	ff2977e3a12e59c7eab0fd7e53d38cc13c1c5ddf0c1cc3e4d2328f13e99c8654</h6>
+							</li>
+
+							<li>[Improvement]
+								<b>Complete rewrite of tracing code</b>, hugely reduced tracing overhead</li>
+							<li>[Improvement] Reduced memory usage and improved performance</li>
+							<li>[Improvement] UI: sharper icons, logo, cleanup, infobuttons</li>
+							<li>[Improvement] Made selecting treeitems less jumpy</li>
+							<li>[Improvement] Decompile code async</li>
+							<br/>
+							<li>[Fix] some NGENed assemblies are not resolved properly</li>
+							<li>[Fix] Restart already running IISExpress site</li>
+							<li>[Fix] Crash when selecting IISExpress item</li>
+							<li>[Fix] Crash when tracing multithreaded applications (especially when enabling parameters)</li>
+							<li>[Fix] Selecting running 32bit process on 64bit machine</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_0_7.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_7.zip'); return false;">Download</a>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.0.6</h2>
+						<h1>(03-10-2016)</h1>
+						<ul>
+							<li>[Fix] Crash when selecting a running process</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_0_6.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_6.zip'); return false;">Download</a>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.0.5</h2>
+						<h1>(02-10-2016)</h1>
+						<ul>
+							<li>[New] Support for CoreClr (beta)</br>
 								<p style="margin-left: 20px;color:darkred">
-									<br/>
-									<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.<br/>I can probably help you out with that if you drop me a mail at 
-								<script type="text/javascript">
- 										document.write("<a href=\"mailto");
-        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
-        								
-        </script>.<br/>Thanks for your understanding!</b>
-								</p>							
-							</section>
-						</div>
-					</div>
+									<i class="fa fa-exclamation-circle" aria-hidden="true"></i> This is in a very early stage.
+									<br/> Please drop me a mail to let me know if it works on your machine
+									<i class="fa fa-smile-o" aria-hidden="true"></i>
+								</p>
+							</li>
+							<li>[Fix] Crash while analyzing running processes</li>
+							<li>[Fix] In a very specific case, the profiled process can crash when arguments are enabled</li>
+							<li>[Fix] Disabled radiobuttons in options when not applicable</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_0_5.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_5.zip'); return false;">Download</a>
+					</section>
 				</div>
-				
-				<div class="container">
-						<div class="row" >
-							<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.1.0</h2>
-								<h1>(20-04-2017)</h1>
-								<ul>
-									<li>[New] <b>Rescope feature</b></li>
-									<li>[New] <b>Virtual timeline</b></li>
-									<li>[New] <b>Filter and reorder threads</b></li>
-									<li>[New] <b>Thread suspensions</b></li>
-									<li>[New] <b>Graph: heapsizes, CPU, RAM, IO</b></li>
-									<li>[New] <b>File mappings</b> (when files are missing during offline analysis)</li>
-									<li>[New] Thread headers in timeline</li>
-									<li>[New] Zebra striping for threads</li>
-									<li>[New] Goto thread (burger icon)</li>
-									<li>[New] Collect Advanced: Enable/Disable inlining</li>
-									<li>[New] Collect Advanced: GC info</li>
-									<li>[New] Collect filters : added threadname</li>
-									<li>[New] Properties of items other than call (module, namespace, class,...)</li>
-									<li>[New] Timeline: ticks headers</li>
-									<li>[New] Timeline: draggable markers</li>
-									<li>[New] Timeline: markers for GC, exceptions and sample ticks</li>
-									<li>[New] Code view: Support for VB and IL</li>
-									<br/>
-									<li>[Fix] Elevation fix for .NET 2.0</li>
-									<li>[Fix] IIS: also stop and restart dependent services</li>
-									<li>[Fix] CPU usage while pausing</li>
-									<li>[Fix] Freeze while dragging out window</li>
-									<li>[Fix] Windows services with spaces in the name</li>
-									<li>[Fix] Wrong human readable duration</li>
-									<br/>
-									
-									<li>[Improvement] Memory usage improvement</li>
-									<li>[Improvement] Timeline: scroll wheel, now scrolls vertically</li>
-									<li>[Improvement] Try auto locate dotcore</li>
-									<li>[Improvement] Analyze immediately after collect</li>
-									<li>[Improvement] Perfo fixes</li>
-									<li>[Improvement] Select .ctr AND .ctb files by default</li>
+			</div>
+		</div>
 
-								</ul>
-								
-								<a href="releases/codetrack_1_0_1_0.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_1_0.zip'); return false;">Download</a>
-							
-								<p style="margin-left: 20px;color:darkred">
-									<br/>
-									<i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;Some antivirus products give false positives on CodeTrack.<br/>I can probably help you out with that if you drop me a mail at 
-								<script type="text/javascript">
- 										document.write("<a href=\"mailto");
-        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
-        								
-        </script>.<br/>Thanks for your understanding!</b>
-								</p>							
-							</section>
-						</div>
-					</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.0.4</h2>
+						<h1>(19-09-2016)</h1>
+						<ul>
+							<li>[New] IIS Express (beta)</li>
+							<li>[New] User names in Running process list</li>
+							<li>[New] Extra info about process in properties</li>
+							<li>[Fix] Take in account elevation of already running processes
+								<br/>(Important if you want to attach to IIS for example.)</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_0_4.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_4.zip'); return false;">Download</a>
+					</section>
 				</div>
-				
-				<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.7</h2>
-								<h1>(23-02-2017)</h1>
-								<ul>
-									
-									<li>[New] Filtering on process name and path (in tracing mode)</li>
-									<li>[New] IISExpress: IISEXpressTray.exe is filtered out by default</li>
-									<li>[New] IISExpress: search for applicationhost.config for iisexpress based on VS solution</li>
-									<li>[New] <b>List view</b></li>
-									<li>[New] Check for new version on startup</li>
-									<li>[New] Logging in case of issues (create c:\codetracklog folder to enable)</li>
-									<li>[New] Human-readable timestamps</li>
-									<li>[New] <b>Advanced tracing options</b>
-										<ul>
-											<li>Hi precision</li>
-											<li>Thread cycles</li>
-											<li>Overhead compensation</li>
-											<li>Generic resolving</li>
-										</ul>
-									</li>
-									
-									<li>[Improvement] <b>Complete rewrite of tracing code</b>, hugely reduced tracing overhead</li>
-									<li>[Improvement] Reduced memory usage and improved performance</li>
-									<li>[Improvement] UI: sharper icons, logo, cleanup, infobuttons</li>
-									<li>[Improvement] Made selecting treeitems less jumpy</li>
-									<li>[Improvement] Decompile code async</li>
-									<br/>
-									<li>[Fix] some NGENed assemblies are not resolved properly</li>
-									<li>[Fix] Restart already running IISExpress site</li>
-									<li>[Fix] Crash when selecting IISExpress item</li>
-									<li>[Fix] Crash when tracing multithreaded applications (especially when enabling parameters)</li>
-									<li>[Fix] Selecting running 32bit process on 64bit machine</li>
-								</ul>
+			</div>
+		</div>
 
-								<a href="releases/codetrack_1_0_0_7.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_7.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="12u">
+					<section class="special box">
+						<h2>V1.0.0.3</h2>
+						<h1>(14-09-2016)</h1>
+						<ul>
+							<li>[New] Override working directory</li>
+							<li>[New] Specify environment variables</li>
+							<li>[Fix] Default working directory to exe location</li>
+						</ul>
+
+						<a href="releases/codetrack_1_0_0_3.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_3.zip'); return false;">Download</a>
+					</section>
 				</div>
-				
-				<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.6</h2>
-								<h1>(03-10-2016)</h1>
-								<ul>
-									<li>[Fix] Crash when selecting a running process</li>
-								</ul>
+			</div>
+		</div>
 
-								<a href="releases/codetrack_1_0_0_6.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_6.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
-				</div>
+	</section>
 
-				<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.5</h2>
-								<h1>(02-10-2016)</h1>
-								<ul>
-									<li>[New] Support for CoreClr (beta)</br>
-									<p style="margin-left: 20px;color:darkred">
-									<i class="fa fa-exclamation-circle" aria-hidden="true"></i> This is in a very early stage.<br/>
-									Please drop me a mail to let me know if it works on your machine <i class="fa fa-smile-o" aria-hidden="true" ></i>
-									</p>
-									</li>
-									<li>[Fix] Crash while analyzing running processes</li>
-									<li>[Fix] In a very specific case, the profiled process can crash when arguments are enabled</li>
-									<li>[Fix] Disabled radiobuttons in options when not applicable</li>
-								</ul>
+	<div class="container">
+		<div class="row">
+			<div class="12u">
+				<section class="special box">
+					<h2>V1.0.0.1</h2>
+					<h1>(13-09-2016)</h1>
+					<ul>
+						<li>[New] Very first release</li>
+					</ul>
 
-								<a href="releases/codetrack_1_0_0_5.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_5.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
-				</div>
+					<a href="releases/codetrack_1_0_0_1.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_1.zip'); return false;">Download</a>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	</section>
 
 
-				<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.4</h2>
-								<h1>(19-09-2016)</h1>
-								<ul>
-									<li>[New] IIS Express (beta)</li>
-									<li>[New] User names in Running process list</li>
-									<li>[New] Extra info about process in properties</li>
-									<li>[Fix] Take in account elevation of already running processes<br/>(Important if you want to attach to IIS for example.)</li>
-								</ul>
 
-								<a href="releases/codetrack_1_0_0_4.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_4.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
-				</div>
-
-
-			<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.3</h2>
-								<h1>(14-09-2016)</h1>
-								<ul>
-									<li>[New] Override working directory</li>
-									<li>[New] Specify environment variables</li>
-									<li>[Fix] Default working directory to exe location</li>
-								</ul>
-
-								<a href="releases/codetrack_1_0_0_3.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_3.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
-				</div>
-
-			</section>
-
-			<div class="container">
-					<div class="row" >
-						<div class="12u" >
-							<section class="special box" >
-								<h2>V1.0.0.1</h2>
-								<h1>(13-09-2016)</h1>
-								<ul>
-									<li>[New] Very first release</li>
-								</ul>
-
-								<a href="releases/codetrack_1_0_0_1.zip" class="button big special" onclick="trackOutboundLink('releases/codetrack_1_0_0_1.zip'); return false;">Download</a>
-							</section>
-						</div>
-					</div>
-				</div>
-				
-			</section>
-			
-		
-			
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<div class="row double">
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<div class="row double">
+				<div class="6u">
+					<div class="row collapse-at-2">
 						<div class="6u">
-							<div class="row collapse-at-2">
-								<div class="6u">
-									<h3>Contact</h3>
-									<ul class="alt">
-										<p href="#">If you have any questions, issues or cool ideas: feel free to contact me using the contact button or just drop me a mail:</br>
-										<script type="text/javascript">
- 										document.write("<a href=\"mailto");
-        								document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>" );
-        								
-        </script>
-        										</p>
-									</ul>
-								</div>
-								<!--<div class="6u">
+							<h3>Contact</h3>
+							<ul class="alt">
+								<p href="#">If you have any questions, issues or cool ideas: feel free to contact me using the contact button or just drop me
+									a mail:</br>
+									<script type="text/javascript">
+										document.write("<a href=\"mailto");
+										document.write(":" + "info" + "@" + "getcodetrack.com\">" + "info" + "@" + "getcodetrack.com<\/a>");
+
+									</script>
+								</p>
+							</ul>
+						</div>
+						<!--<div class="6u">
 									<h3>Faucibus</h3>
 									<ul class="alt">
 										<li><a href="#">Nascetur nunc varius</a></li>
@@ -423,58 +562,78 @@
 										<li><a href="#">Nascetur nunc varius</a></li>
 									</ul>
 								</div>-->
-							</div>
-						</div>
-						<div class="6u">
-							<h2>Follow Codetrack</h2>
-							<p>Follow codetrack and stay up to date about new features and reases.</p>
-							<ul class="icons">
-								<li><a href="https://twitter.com/codetrack4net" onclick="trackOutboundLink('https://twitter.com/codetrack4net'); return false;" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://www.facebook.com/codetrackdotnet" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet'); return false;" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;" class="icon fa-rss"><span class="label">Twitter</span></a></li>
-								<!--<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					</div>
+				</div>
+				<div class="6u">
+					<h2>Follow Codetrack</h2>
+					<p>Follow codetrack and stay up to date about new features and reases.</p>
+					<ul class="icons">
+						<li>
+							<a href="https://twitter.com/codetrack4net" onclick="trackOutboundLink('https://twitter.com/codetrack4net'); return false;"
+							 class="icon fa-twitter">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/codetrackdotnet" onclick="trackOutboundLink('https://www.facebook.com/codetrackdotnet'); return false;"
+							 class="icon fa-facebook">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://getcodetrack.wordpress.com/" onclick="trackOutboundLink('https://getcodetrack.wordpress.com/'); return false;"
+							 class="icon fa-rss">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+						<!--<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
-							</ul>
-						</div>
-					</div> 
-					<ul class="copyright">
-						<li>&copy; Nico Van Goethem. All rights reserved.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<!-- <li>Images: <a href="http://unsplash.com">Unsplash</a></li> -->
 					</ul>
 				</div>
-			</footer>
+			</div>
+			<ul class="copyright">
+				<li>&copy; Nico Van Goethem. All rights reserved.</li>
+				<li>Design:
+					<a href="http://templated.co">TEMPLATED</a>
+				</li>
+				<!-- <li>Images: <a href="http://unsplash.com">Unsplash</a></li> -->
+			</ul>
+		</div>
+	</footer>
 
- 
- 		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<script src="js/mine.js"></script>
-		<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-83912260-1', 'auto');
-  ga('send', 'pageview');
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/mine.js"></script>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-</script>
-<script>
-/**
-* Functie die klikken op een uitgaande link in Analytics bijhoudt.
-* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
-* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
-* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
-*/
-var trackOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
-} 
-</script>
-	</body>
+		ga('create', 'UA-83912260-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+	<script>
+		/**
+		* Functie die klikken op een uitgaande link in Analytics bijhoudt.
+		* Deze functie vereist een geldige URL-tekenreeks als argument en gebruikt de betreffende URL-tekenreeks
+		* als eventlabel. Wanneer de methode 'transport' wordt ingesteld op 'beacon', wordt de hit verzonden
+		* bij gebruik van 'navigator.sendBeacon' in de browser die dat ondersteunt.
+		*/
+		var trackOutboundLink = function (url) {
+			ga('send', 'event', 'outbound', 'click', url, {
+				'transport': 'beacon',
+				'hitCallback': function () { document.location = url; }
+			});
+		} 
+	</script>
+</body>
+
 </html>
